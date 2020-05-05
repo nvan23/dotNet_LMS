@@ -127,5 +127,11 @@ namespace LibraryManagementSystem
             view_student_info _view_student_info = new view_student_info();
             _view_student_info.Show();
         }
+
+        private void issueBooksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            issue_books _issue_books = new issue_books();
+            _issue_books.Show();
+        }
     }
 }
