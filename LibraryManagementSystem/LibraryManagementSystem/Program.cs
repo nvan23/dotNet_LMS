@@ -16,7 +16,7 @@ namespace LibraryManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new view_student_info());
+            Application.Run(new books_stock());
         }
     }
 }

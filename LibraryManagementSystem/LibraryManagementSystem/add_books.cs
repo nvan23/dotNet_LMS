@@ -75,7 +75,7 @@ namespace LibraryManagementSystem
                     con.Open();
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into books_info values('" + txtBookName.Text + "','" + txtBookAuthorName.Text + "','" + txtBookPublication.Text + "','" + dtpBookPurchaseDate.Text + "'," + txtBookPrice.Text + "," + txtQuantity.Text + ")";
+                    cmd.CommandText = "insert into books_info values('" + txtBookName.Text + "','" + txtBookAuthorName.Text + "','" + txtBookPublication.Text + "','" + dtpBookPurchaseDate.Text + "'," + txtBookPrice.Text + "," + txtQuantity.Text + "," + txtQuantity.Text + ")";
                     cmd.ExecuteNonQuery();
                     con.Close();
                     

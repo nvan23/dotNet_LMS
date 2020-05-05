@@ -58,8 +58,20 @@
     <Compile Include="add_student_info.Designer.cs">
       <DependentUpon>add_student_info.cs</DependentUpon>
     </Compile>
+    <Compile Include="books_stock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="books_stock.Designer.cs">
+      <DependentUpon>books_stock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="clsConnection.cs" />
+    <Compile Include="issue_books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="issue_books.Designer.cs">
+      <DependentUpon>issue_books.cs</DependentUpon>
+    </Compile>
     <Compile Include="login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,6 +86,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="return_books.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="return_books.Designer.cs">
+      <DependentUpon>return_books.cs</DependentUpon>
+    </Compile>
     <Compile Include="view_books.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,12 @@
     <EmbeddedResource Include="add_student_info.resx">
       <DependentUpon>add_student_info.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="books_stock.resx">
+      <DependentUpon>books_stock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="issue_books.resx">
+      <DependentUpon>issue_books.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="login.resx">
       <DependentUpon>login.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +131,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="return_books.resx">
+      <DependentUpon>return_books.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view_books.resx">
       <DependentUpon>view_books.cs</DependentUpon>
     </EmbeddedResource>
