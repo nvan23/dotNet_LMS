@@ -1,0 +1,14 @@
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe.config
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojResolveAssemblyReference.cache
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.login.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.mdi_user.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Properties.Resources.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.GenerateResource.Cache
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.exe
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\LibraryManagementSystem.pdb
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.exe
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.pdb
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.add_books.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.view_books.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.add_student_info.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.view_student_info.resources
