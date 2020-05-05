@@ -78,7 +78,7 @@ namespace LibraryManagementSystem
             try
             {
                 string img_path;
-                File.Copy(openFileImage.FileName, wanted_path + "\\student_images\\" + ".jpg");
+                File.Copy(openFileImage.FileName, wanted_path + "\\student_images\\" + pwd + ".jpg");
 
                 img_path = "student_images\\" + pwd + ".jpg";
 
