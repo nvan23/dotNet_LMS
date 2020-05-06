@@ -79,17 +79,36 @@ namespace LibraryManagementSystem
                 }
                 if(book_quantity > 0)
                 {
-                    SqlCommand cmd = con.CreateCommand();
-                    cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into issue_books values('" + txtStudentEnrollmentNo_issue.Text + "','" + txtStudentName_issue.Text + "','" + txtStudentDepartment_issue.Text + "','" + txtStudentSeminar_issue.Text + "','" + txtStudentContact_issue.Text + "','" + txtStudentEmail_issue.Text + "','" + txtBooksName_issue.Text + "','" + dtpBookIssueDate.Value.ToShortDateString() + "','')";
-                    cmd.ExecuteNonQuery();
 
-                    SqlCommand cmd1 = con.CreateCommand();
-                    cmd1.CommandType = CommandType.Text;
-                    cmd1.CommandText = "update books_info set available_book=available_book-1 where books_name='" + txtBooksName_issue.Text + "'";
-                    cmd1.ExecuteNonQuery();
+                    int index = 0;
+                    SqlCommand cmd3 = con.CreateCommand();
+                    cmd3.CommandType = CommandType.Text;
+                    cmd3.CommandText = "select * from student_info where student_enrollment_no='" + txtStudentEnrollmentNo_issue.Text + "'";
+                    cmd3.ExecuteNonQuery();
 
-                    MessageBox.Show("Book Issue Successfully!");
+                    DataTable dt3 = new DataTable();
+                    SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+                    da3.Fill(dt3);
+                    index = Convert.ToInt32(dt3.Rows.Count.ToString());
+
+                    if (index == 0)
+                    {
+                        MessageBox.Show("Your Enrollment No. Not Found. Please try again with another enrollment");
+                    }
+                    else
+                    {
+                        SqlCommand cmd = con.CreateCommand();
+                        cmd.CommandType = CommandType.Text;
+                        cmd.CommandText = "insert into issue_books values('" + txtStudentEnrollmentNo_issue.Text + "','" + txtStudentName_issue.Text + "','" + txtStudentDepartment_issue.Text + "','" + txtStudentSeminar_issue.Text + "','" + txtStudentContact_issue.Text + "','" + txtStudentEmail_issue.Text + "','" + txtBooksName_issue.Text + "','" + dtpBookIssueDate.Value.ToShortDateString() + "','')";
+                        cmd.ExecuteNonQuery();
+
+                        SqlCommand cmd1 = con.CreateCommand();
+                        cmd1.CommandType = CommandType.Text;
+                        cmd1.CommandText = "update books_info set available_book=available_book-1 where books_name='" + txtBooksName_issue.Text + "'";
+                        cmd1.ExecuteNonQuery();
+
+                        MessageBox.Show("Book Issue Successfully!");
+                    }
                 }
                 else
                 {

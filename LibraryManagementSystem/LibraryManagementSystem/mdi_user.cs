@@ -139,5 +139,17 @@ namespace LibraryManagementSystem
             return_books _return_books = new return_books();
             _return_books.Show();
         }
+
+        private void booksStockToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            books_stock _books_stock = new books_stock();
+            _books_stock.Show();
+        }
+
+        private void remainBookReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            report_books_remain_retain _report_books_remain_retain = new report_books_remain_retain();
+            _report_books_remain_retain.Show();
+        }
     }
 }
