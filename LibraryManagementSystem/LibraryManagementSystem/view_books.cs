@@ -34,7 +34,21 @@ namespace LibraryManagementSystem
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
+                /*
+                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
+                {
+                    button.Name = "button";
+                    button.HeaderText = "Delete";
+                    button.Text = "Delete";
+                    button.UseColumnTextForButtonValue = true; //dont forget this line
+                    this.dgvViewBooks.Columns.Add(button);
+                }
+                */
+
                 dgvViewBooks.DataSource = dt;
+
+                
+
                 index = Convert.ToInt32(dt.Rows.Count.ToString());
                 con.Close();
 
@@ -157,6 +171,7 @@ namespace LibraryManagementSystem
 
                 dgvViewBooks.DataSource = dt;
 
+
                 con.Close();
 
             }
@@ -173,9 +188,8 @@ namespace LibraryManagementSystem
 
             try
             {
+                btnDelete.Visible = true;
                 panelEdit.Visible = true;
-                
-
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -195,7 +209,6 @@ namespace LibraryManagementSystem
                     txtBookPrice_edit.Text = dr["books_price"].ToString();
                     txtQuantity_edit.Text = dr["books_quantity"].ToString();
                 }
-
                 con.Close();
 
             }
@@ -220,6 +233,28 @@ namespace LibraryManagementSystem
                 con.Close();
                 display_books();
                 MessageBox.Show("Update successfully!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int index;
+            index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
+            try
+            {
+                con.Open();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from books_info where id='" + index + "'";
+                cmd.ExecuteNonQuery();
+                con.Close();
+                display_books();
+                MessageBox.Show("Delete successfully!");
 
             }
             catch (Exception ex)

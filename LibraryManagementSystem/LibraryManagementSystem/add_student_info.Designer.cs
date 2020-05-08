@@ -42,7 +42,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBoxStudent = new System.Windows.Forms.PictureBox();
             this.openFileImage = new System.Windows.Forms.OpenFileDialog();
@@ -65,66 +64,66 @@
             this.panelStudent.Controls.Add(this.label5);
             this.panelStudent.Controls.Add(this.label4);
             this.panelStudent.Controls.Add(this.label3);
-            this.panelStudent.Controls.Add(this.label2);
             this.panelStudent.Controls.Add(this.label1);
             this.panelStudent.Controls.Add(this.pictureBoxStudent);
-            this.panelStudent.Location = new System.Drawing.Point(40, 32);
+            this.panelStudent.Location = new System.Drawing.Point(12, 12);
             this.panelStudent.Name = "panelStudent";
-            this.panelStudent.Size = new System.Drawing.Size(1133, 375);
+            this.panelStudent.Size = new System.Drawing.Size(532, 382);
             this.panelStudent.TabIndex = 0;
             this.panelStudent.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // txtStudentEmail
             // 
-            this.txtStudentEmail.Location = new System.Drawing.Point(111, 312);
+            this.txtStudentEmail.Location = new System.Drawing.Point(6, 322);
             this.txtStudentEmail.Name = "txtStudentEmail";
-            this.txtStudentEmail.Size = new System.Drawing.Size(135, 20);
+            this.txtStudentEmail.Size = new System.Drawing.Size(220, 20);
             this.txtStudentEmail.TabIndex = 15;
             this.txtStudentEmail.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.txtStudentEmail.Leave += new System.EventHandler(this.txtStudentEmail_Leave);
             // 
             // txtStudentContactNo
             // 
-            this.txtStudentContactNo.Location = new System.Drawing.Point(624, 164);
+            this.txtStudentContactNo.Location = new System.Drawing.Point(6, 267);
             this.txtStudentContactNo.Name = "txtStudentContactNo";
-            this.txtStudentContactNo.Size = new System.Drawing.Size(135, 20);
+            this.txtStudentContactNo.Size = new System.Drawing.Size(220, 20);
             this.txtStudentContactNo.TabIndex = 14;
             this.txtStudentContactNo.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // txtStudentDepartment
             // 
-            this.txtStudentDepartment.Location = new System.Drawing.Point(111, 165);
+            this.txtStudentDepartment.Location = new System.Drawing.Point(6, 153);
             this.txtStudentDepartment.Name = "txtStudentDepartment";
-            this.txtStudentDepartment.Size = new System.Drawing.Size(135, 20);
+            this.txtStudentDepartment.Size = new System.Drawing.Size(220, 20);
             this.txtStudentDepartment.TabIndex = 13;
             this.txtStudentDepartment.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // txtStudentSeminar
             // 
-            this.txtStudentSeminar.Location = new System.Drawing.Point(360, 165);
+            this.txtStudentSeminar.Location = new System.Drawing.Point(6, 210);
             this.txtStudentSeminar.Name = "txtStudentSeminar";
-            this.txtStudentSeminar.Size = new System.Drawing.Size(135, 20);
+            this.txtStudentSeminar.Size = new System.Drawing.Size(220, 20);
             this.txtStudentSeminar.TabIndex = 12;
             this.txtStudentSeminar.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // txtEnrollmentNo
             // 
-            this.txtEnrollmentNo.Location = new System.Drawing.Point(624, 23);
+            this.txtEnrollmentNo.Location = new System.Drawing.Point(6, 101);
             this.txtEnrollmentNo.Name = "txtEnrollmentNo";
-            this.txtEnrollmentNo.Size = new System.Drawing.Size(135, 20);
+            this.txtEnrollmentNo.Size = new System.Drawing.Size(220, 20);
             this.txtEnrollmentNo.TabIndex = 11;
             this.txtEnrollmentNo.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtStudentName
             // 
-            this.txtStudentName.Location = new System.Drawing.Point(111, 23);
+            this.txtStudentName.Location = new System.Drawing.Point(6, 47);
             this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(135, 20);
+            this.txtStudentName.Size = new System.Drawing.Size(220, 20);
             this.txtStudentName.TabIndex = 10;
             this.txtStudentName.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(870, 309);
+            this.btnSave.Location = new System.Drawing.Point(256, 320);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(237, 23);
             this.btnSave.TabIndex = 9;
@@ -134,18 +133,18 @@
             // 
             // btnChooseFile
             // 
-            this.btnChooseFile.Location = new System.Drawing.Point(360, 25);
+            this.btnChooseFile.Location = new System.Drawing.Point(256, 291);
             this.btnChooseFile.Name = "btnChooseFile";
-            this.btnChooseFile.Size = new System.Drawing.Size(75, 23);
+            this.btnChooseFile.Size = new System.Drawing.Size(237, 23);
             this.btnChooseFile.TabIndex = 8;
-            this.btnChooseFile.Text = "Choose File";
+            this.btnChooseFile.Text = "Choose File To Upload";
             this.btnChooseFile.UseVisualStyleBackColor = true;
             this.btnChooseFile.Click += new System.EventHandler(this.button1_Click);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 319);
+            this.label7.Location = new System.Drawing.Point(3, 306);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(72, 13);
             this.label7.TabIndex = 7;
@@ -154,7 +153,7 @@
             // labelContactNo
             // 
             this.labelContactNo.AutoSize = true;
-            this.labelContactNo.Location = new System.Drawing.Point(511, 171);
+            this.labelContactNo.Location = new System.Drawing.Point(3, 251);
             this.labelContactNo.Name = "labelContactNo";
             this.labelContactNo.Size = new System.Drawing.Size(104, 13);
             this.labelContactNo.TabIndex = 6;
@@ -163,7 +162,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(266, 172);
+            this.label5.Location = new System.Drawing.Point(3, 194);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(85, 13);
             this.label5.TabIndex = 5;
@@ -172,7 +171,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 172);
+            this.label4.Location = new System.Drawing.Point(3, 137);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(102, 13);
             this.label4.TabIndex = 4;
@@ -181,20 +180,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(511, 30);
+            this.label3.Location = new System.Drawing.Point(3, 84);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(76, 13);
             this.label3.TabIndex = 3;
             this.label3.Text = "Enrollment No.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(266, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(69, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Select Image";
             // 
             // label1
             // 
@@ -207,11 +197,12 @@
             // 
             // pictureBoxStudent
             // 
-            this.pictureBoxStudent.Location = new System.Drawing.Point(870, 3);
+            this.pictureBoxStudent.Location = new System.Drawing.Point(256, 47);
             this.pictureBoxStudent.Name = "pictureBoxStudent";
             this.pictureBoxStudent.Size = new System.Drawing.Size(237, 240);
             this.pictureBoxStudent.TabIndex = 0;
             this.pictureBoxStudent.TabStop = false;
+            this.pictureBoxStudent.Click += new System.EventHandler(this.pictureBoxStudent_Click);
             // 
             // openFileImage
             // 
@@ -221,11 +212,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1196, 440);
+            this.ClientSize = new System.Drawing.Size(556, 420);
             this.Controls.Add(this.panelStudent);
             this.Name = "add_student_info";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Student";
+            this.Load += new System.EventHandler(this.add_student_info_Load);
             this.panelStudent.ResumeLayout(false);
             this.panelStudent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxStudent)).EndInit();
@@ -249,7 +241,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBoxStudent;
         private System.Windows.Forms.OpenFileDialog openFileImage;

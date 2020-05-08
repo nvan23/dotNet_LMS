@@ -29,25 +29,25 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtStudentEnrollmentNo_issue = new System.Windows.Forms.TextBox();
-            this.txtStudentName_issue = new System.Windows.Forms.TextBox();
-            this.txtStudentDepartment_issue = new System.Windows.Forms.TextBox();
-            this.txtStudentSeminar_issue = new System.Windows.Forms.TextBox();
-            this.txtStudentContact_issue = new System.Windows.Forms.TextBox();
-            this.txtStudentEmail_issue = new System.Windows.Forms.TextBox();
-            this.txtBooksName_issue = new System.Windows.Forms.TextBox();
-            this.btnSearchStudent_issue = new System.Windows.Forms.Button();
-            this.btnIssueBooks = new System.Windows.Forms.Button();
-            this.dtpBookIssueDate = new System.Windows.Forms.DateTimePicker();
             this.listBoxBooksName = new System.Windows.Forms.ListBox();
+            this.dtpBookIssueDate = new System.Windows.Forms.DateTimePicker();
+            this.btnIssueBooks = new System.Windows.Forms.Button();
+            this.btnSearchStudent_issue = new System.Windows.Forms.Button();
+            this.txtBooksName_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentEmail_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentContact_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentSeminar_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentDepartment_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentName_issue = new System.Windows.Forms.TextBox();
+            this.txtStudentEnrollmentNo_issue = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,81 +74,99 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(13, 13);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1159, 555);
+            this.panel1.Size = new System.Drawing.Size(492, 381);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
-            // label1
+            // listBoxBooksName
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Enrollment No.";
+            this.listBoxBooksName.FormattingEnabled = true;
+            this.listBoxBooksName.Location = new System.Drawing.Point(33, 159);
+            this.listBoxBooksName.Name = "listBoxBooksName";
+            this.listBoxBooksName.Size = new System.Drawing.Size(200, 147);
+            this.listBoxBooksName.TabIndex = 19;
+            this.listBoxBooksName.Visible = false;
+            this.listBoxBooksName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBoxBooksName_MouseClick);
+            this.listBoxBooksName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxBooksName_KeyDown);
             // 
-            // label2
+            // dtpBookIssueDate
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(382, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(75, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Student Name";
+            this.dtpBookIssueDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
+            this.dtpBookIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpBookIssueDate.Location = new System.Drawing.Point(254, 286);
+            this.dtpBookIssueDate.Name = "dtpBookIssueDate";
+            this.dtpBookIssueDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpBookIssueDate.TabIndex = 18;
             // 
-            // label3
+            // btnIssueBooks
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(382, 88);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Student Department";
+            this.btnIssueBooks.Location = new System.Drawing.Point(33, 326);
+            this.btnIssueBooks.Name = "btnIssueBooks";
+            this.btnIssueBooks.Size = new System.Drawing.Size(421, 23);
+            this.btnIssueBooks.TabIndex = 17;
+            this.btnIssueBooks.Text = "Issue Books";
+            this.btnIssueBooks.UseVisualStyleBackColor = true;
+            this.btnIssueBooks.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label4
+            // btnSearchStudent_issue
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(382, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Student Semimar";
+            this.btnSearchStudent_issue.Location = new System.Drawing.Point(33, 57);
+            this.btnSearchStudent_issue.Name = "btnSearchStudent_issue";
+            this.btnSearchStudent_issue.Size = new System.Drawing.Size(188, 23);
+            this.btnSearchStudent_issue.TabIndex = 16;
+            this.btnSearchStudent_issue.Text = "Check Student";
+            this.btnSearchStudent_issue.UseVisualStyleBackColor = true;
+            this.btnSearchStudent_issue.Click += new System.EventHandler(this.btnSearchStudent_issue_Click);
             // 
-            // label5
+            // txtBooksName_issue
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(382, 191);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(84, 13);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Student Contact";
+            this.txtBooksName_issue.Location = new System.Drawing.Point(33, 133);
+            this.txtBooksName_issue.Name = "txtBooksName_issue";
+            this.txtBooksName_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtBooksName_issue.TabIndex = 14;
+            this.txtBooksName_issue.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
+            this.txtBooksName_issue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBooksName_issue_KeyDown);
+            this.txtBooksName_issue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBooksName_issue_KeyUp);
             // 
-            // label6
+            // txtStudentEmail_issue
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 243);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(72, 13);
-            this.label6.TabIndex = 5;
-            this.label6.Text = "Student Email";
+            this.txtStudentEmail_issue.Location = new System.Drawing.Point(254, 237);
+            this.txtStudentEmail_issue.Name = "txtStudentEmail_issue";
+            this.txtStudentEmail_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentEmail_issue.TabIndex = 13;
+            this.txtStudentEmail_issue.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
-            // label7
+            // txtStudentContact_issue
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(382, 291);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 13);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "Issue Date";
+            this.txtStudentContact_issue.Location = new System.Drawing.Point(254, 184);
+            this.txtStudentContact_issue.Name = "txtStudentContact_issue";
+            this.txtStudentContact_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentContact_issue.TabIndex = 12;
+            this.txtStudentContact_issue.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
-            // label8
+            // txtStudentSeminar_issue
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(382, 342);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(68, 13);
-            this.label8.TabIndex = 7;
-            this.label8.Text = "Books Name";
+            this.txtStudentSeminar_issue.Location = new System.Drawing.Point(254, 133);
+            this.txtStudentSeminar_issue.Name = "txtStudentSeminar_issue";
+            this.txtStudentSeminar_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentSeminar_issue.TabIndex = 11;
+            this.txtStudentSeminar_issue.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // txtStudentDepartment_issue
+            // 
+            this.txtStudentDepartment_issue.Location = new System.Drawing.Point(254, 81);
+            this.txtStudentDepartment_issue.Name = "txtStudentDepartment_issue";
+            this.txtStudentDepartment_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentDepartment_issue.TabIndex = 10;
+            this.txtStudentDepartment_issue.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // txtStudentName_issue
+            // 
+            this.txtStudentName_issue.Location = new System.Drawing.Point(254, 31);
+            this.txtStudentName_issue.Name = "txtStudentName_issue";
+            this.txtStudentName_issue.Size = new System.Drawing.Size(200, 20);
+            this.txtStudentName_issue.TabIndex = 9;
+            this.txtStudentName_issue.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // txtStudentEnrollmentNo_issue
             // 
@@ -158,101 +176,83 @@
             this.txtStudentEnrollmentNo_issue.TabIndex = 8;
             this.txtStudentEnrollmentNo_issue.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // txtStudentName_issue
+            // label8
             // 
-            this.txtStudentName_issue.Location = new System.Drawing.Point(500, 24);
-            this.txtStudentName_issue.Name = "txtStudentName_issue";
-            this.txtStudentName_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentName_issue.TabIndex = 9;
-            this.txtStudentName_issue.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(30, 117);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(96, 13);
+            this.label8.TabIndex = 7;
+            this.label8.Text = "Enter Books Name";
             // 
-            // txtStudentDepartment_issue
+            // label7
             // 
-            this.txtStudentDepartment_issue.Location = new System.Drawing.Point(500, 81);
-            this.txtStudentDepartment_issue.Name = "txtStudentDepartment_issue";
-            this.txtStudentDepartment_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentDepartment_issue.TabIndex = 10;
-            this.txtStudentDepartment_issue.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(254, 270);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 13);
+            this.label7.TabIndex = 6;
+            this.label7.Text = "Issue Date";
             // 
-            // txtStudentSeminar_issue
+            // label6
             // 
-            this.txtStudentSeminar_issue.Location = new System.Drawing.Point(500, 133);
-            this.txtStudentSeminar_issue.Name = "txtStudentSeminar_issue";
-            this.txtStudentSeminar_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentSeminar_issue.TabIndex = 11;
-            this.txtStudentSeminar_issue.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(254, 221);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(72, 13);
+            this.label6.TabIndex = 5;
+            this.label6.Text = "Student Email";
             // 
-            // txtStudentContact_issue
+            // label5
             // 
-            this.txtStudentContact_issue.Location = new System.Drawing.Point(500, 184);
-            this.txtStudentContact_issue.Name = "txtStudentContact_issue";
-            this.txtStudentContact_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentContact_issue.TabIndex = 12;
-            this.txtStudentContact_issue.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(254, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(84, 13);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Student Contact";
             // 
-            // txtStudentEmail_issue
+            // label4
             // 
-            this.txtStudentEmail_issue.Location = new System.Drawing.Point(500, 236);
-            this.txtStudentEmail_issue.Name = "txtStudentEmail_issue";
-            this.txtStudentEmail_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtStudentEmail_issue.TabIndex = 13;
-            this.txtStudentEmail_issue.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(251, 117);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(87, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Student Semimar";
             // 
-            // txtBooksName_issue
+            // label3
             // 
-            this.txtBooksName_issue.Location = new System.Drawing.Point(500, 335);
-            this.txtBooksName_issue.Name = "txtBooksName_issue";
-            this.txtBooksName_issue.Size = new System.Drawing.Size(200, 20);
-            this.txtBooksName_issue.TabIndex = 14;
-            this.txtBooksName_issue.TextChanged += new System.EventHandler(this.textBox7_TextChanged);
-            this.txtBooksName_issue.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBooksName_issue_KeyDown);
-            this.txtBooksName_issue.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBooksName_issue_KeyUp);
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(251, 63);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Student Department";
             // 
-            // btnSearchStudent_issue
+            // label2
             // 
-            this.btnSearchStudent_issue.Location = new System.Drawing.Point(33, 58);
-            this.btnSearchStudent_issue.Name = "btnSearchStudent_issue";
-            this.btnSearchStudent_issue.Size = new System.Drawing.Size(188, 23);
-            this.btnSearchStudent_issue.TabIndex = 16;
-            this.btnSearchStudent_issue.Text = "Search Student";
-            this.btnSearchStudent_issue.UseVisualStyleBackColor = true;
-            this.btnSearchStudent_issue.Click += new System.EventHandler(this.btnSearchStudent_issue_Click);
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(251, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(75, 13);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Student Name";
             // 
-            // btnIssueBooks
+            // label1
             // 
-            this.btnIssueBooks.Location = new System.Drawing.Point(500, 529);
-            this.btnIssueBooks.Name = "btnIssueBooks";
-            this.btnIssueBooks.Size = new System.Drawing.Size(200, 23);
-            this.btnIssueBooks.TabIndex = 17;
-            this.btnIssueBooks.Text = "Issue Books";
-            this.btnIssueBooks.UseVisualStyleBackColor = true;
-            this.btnIssueBooks.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // dtpBookIssueDate
-            // 
-            this.dtpBookIssueDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dtpBookIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookIssueDate.Location = new System.Drawing.Point(500, 285);
-            this.dtpBookIssueDate.Name = "dtpBookIssueDate";
-            this.dtpBookIssueDate.Size = new System.Drawing.Size(200, 20);
-            this.dtpBookIssueDate.TabIndex = 18;
-            // 
-            // listBoxBooksName
-            // 
-            this.listBoxBooksName.FormattingEnabled = true;
-            this.listBoxBooksName.Location = new System.Drawing.Point(500, 361);
-            this.listBoxBooksName.Name = "listBoxBooksName";
-            this.listBoxBooksName.Size = new System.Drawing.Size(200, 95);
-            this.listBoxBooksName.TabIndex = 19;
-            this.listBoxBooksName.Visible = false;
-            this.listBoxBooksName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listBoxBooksName_MouseClick);
-            this.listBoxBooksName.KeyDown += new System.Windows.Forms.KeyEventHandler(this.listBoxBooksName_KeyDown);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter Enrollment No.";
             // 
             // issue_books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1184, 580);
+            this.ClientSize = new System.Drawing.Size(517, 408);
             this.Controls.Add(this.panel1);
             this.Name = "issue_books";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

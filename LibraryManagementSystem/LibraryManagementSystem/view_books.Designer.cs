@@ -38,6 +38,8 @@
             this.txtSeachAuthor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelEdit = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.dtpBookPurchaseDate_edit = new System.Windows.Forms.DateTimePicker();
             this.txtQuantity_edit = new System.Windows.Forms.TextBox();
             this.txtBookPrice_edit = new System.Windows.Forms.TextBox();
@@ -50,7 +52,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.btnUpdate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -59,11 +60,12 @@
             // 
             // dgvViewBooks
             // 
+            this.dgvViewBooks.AllowUserToAddRows = false;
             this.dgvViewBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvViewBooks.Location = new System.Drawing.Point(309, 12);
+            this.dgvViewBooks.Location = new System.Drawing.Point(201, 12);
             this.dgvViewBooks.Name = "dgvViewBooks";
             this.dgvViewBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvViewBooks.Size = new System.Drawing.Size(874, 257);
+            this.dgvViewBooks.Size = new System.Drawing.Size(847, 527);
             this.dgvViewBooks.TabIndex = 0;
             this.dgvViewBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvViewBooks_CellClick);
             // 
@@ -74,12 +76,12 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(291, 118);
+            this.panel1.Size = new System.Drawing.Size(177, 83);
             this.panel1.TabIndex = 1;
             // 
             // btnSearchBook
             // 
-            this.btnSearchBook.Location = new System.Drawing.Point(111, 49);
+            this.btnSearchBook.Location = new System.Drawing.Point(6, 53);
             this.btnSearchBook.Name = "btnSearchBook";
             this.btnSearchBook.Size = new System.Drawing.Size(163, 23);
             this.btnSearchBook.TabIndex = 2;
@@ -89,7 +91,7 @@
             // 
             // txtSearchBook
             // 
-            this.txtSearchBook.Location = new System.Drawing.Point(111, 23);
+            this.txtSearchBook.Location = new System.Drawing.Point(6, 27);
             this.txtSearchBook.Name = "txtSearchBook";
             this.txtSearchBook.Size = new System.Drawing.Size(163, 20);
             this.txtSearchBook.TabIndex = 1;
@@ -98,7 +100,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 26);
+            this.label1.Location = new System.Drawing.Point(3, 11);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 13);
             this.label1.TabIndex = 0;
@@ -109,14 +111,14 @@
             this.panel2.Controls.Add(this.btnSearchAuthor);
             this.panel2.Controls.Add(this.txtSeachAuthor);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(12, 136);
+            this.panel2.Location = new System.Drawing.Point(12, 101);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(291, 133);
+            this.panel2.Size = new System.Drawing.Size(177, 95);
             this.panel2.TabIndex = 3;
             // 
             // btnSearchAuthor
             // 
-            this.btnSearchAuthor.Location = new System.Drawing.Point(111, 49);
+            this.btnSearchAuthor.Location = new System.Drawing.Point(6, 51);
             this.btnSearchAuthor.Name = "btnSearchAuthor";
             this.btnSearchAuthor.Size = new System.Drawing.Size(163, 23);
             this.btnSearchAuthor.TabIndex = 2;
@@ -126,7 +128,7 @@
             // 
             // txtSeachAuthor
             // 
-            this.txtSeachAuthor.Location = new System.Drawing.Point(111, 23);
+            this.txtSeachAuthor.Location = new System.Drawing.Point(6, 25);
             this.txtSeachAuthor.Name = "txtSeachAuthor";
             this.txtSeachAuthor.Size = new System.Drawing.Size(163, 20);
             this.txtSeachAuthor.TabIndex = 1;
@@ -135,7 +137,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(14, 26);
+            this.label2.Location = new System.Drawing.Point(3, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 0;
@@ -143,6 +145,7 @@
             // 
             // panelEdit
             // 
+            this.panelEdit.Controls.Add(this.btnDelete);
             this.panelEdit.Controls.Add(this.btnUpdate);
             this.panelEdit.Controls.Add(this.dtpBookPurchaseDate_edit);
             this.panelEdit.Controls.Add(this.txtQuantity_edit);
@@ -156,60 +159,81 @@
             this.panelEdit.Controls.Add(this.label3);
             this.panelEdit.Controls.Add(this.label8);
             this.panelEdit.Controls.Add(this.label9);
-            this.panelEdit.Location = new System.Drawing.Point(309, 275);
+            this.panelEdit.Location = new System.Drawing.Point(12, 202);
             this.panelEdit.Name = "panelEdit";
-            this.panelEdit.Size = new System.Drawing.Size(846, 203);
+            this.panelEdit.Size = new System.Drawing.Size(177, 354);
             this.panelEdit.TabIndex = 4;
             this.panelEdit.Visible = false;
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(6, 314);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(163, 23);
+            this.btnDelete.TabIndex = 5;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Visible = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(6, 285);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(163, 23);
+            this.btnUpdate.TabIndex = 31;
+            this.btnUpdate.Text = "Update";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // dtpBookPurchaseDate_edit
             // 
             this.dtpBookPurchaseDate_edit.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpBookPurchaseDate_edit.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookPurchaseDate_edit.Location = new System.Drawing.Point(566, 15);
+            this.dtpBookPurchaseDate_edit.Location = new System.Drawing.Point(6, 163);
             this.dtpBookPurchaseDate_edit.Name = "dtpBookPurchaseDate_edit";
-            this.dtpBookPurchaseDate_edit.Size = new System.Drawing.Size(200, 20);
+            this.dtpBookPurchaseDate_edit.Size = new System.Drawing.Size(163, 20);
             this.dtpBookPurchaseDate_edit.TabIndex = 30;
             // 
             // txtQuantity_edit
             // 
-            this.txtQuantity_edit.Location = new System.Drawing.Point(566, 107);
+            this.txtQuantity_edit.Location = new System.Drawing.Point(6, 249);
             this.txtQuantity_edit.Name = "txtQuantity_edit";
-            this.txtQuantity_edit.Size = new System.Drawing.Size(200, 20);
+            this.txtQuantity_edit.Size = new System.Drawing.Size(163, 20);
             this.txtQuantity_edit.TabIndex = 27;
             // 
             // txtBookPrice_edit
             // 
-            this.txtBookPrice_edit.Location = new System.Drawing.Point(566, 56);
+            this.txtBookPrice_edit.Location = new System.Drawing.Point(6, 205);
             this.txtBookPrice_edit.Name = "txtBookPrice_edit";
-            this.txtBookPrice_edit.Size = new System.Drawing.Size(200, 20);
+            this.txtBookPrice_edit.Size = new System.Drawing.Size(163, 20);
             this.txtBookPrice_edit.TabIndex = 26;
             // 
             // txtBookPublication_edit
             // 
-            this.txtBookPublication_edit.Location = new System.Drawing.Point(148, 103);
+            this.txtBookPublication_edit.Location = new System.Drawing.Point(6, 120);
             this.txtBookPublication_edit.Name = "txtBookPublication_edit";
-            this.txtBookPublication_edit.Size = new System.Drawing.Size(200, 20);
+            this.txtBookPublication_edit.Size = new System.Drawing.Size(163, 20);
             this.txtBookPublication_edit.TabIndex = 25;
             // 
             // txtBookAuthorName_edit
             // 
-            this.txtBookAuthorName_edit.Location = new System.Drawing.Point(148, 56);
+            this.txtBookAuthorName_edit.Location = new System.Drawing.Point(6, 73);
             this.txtBookAuthorName_edit.Name = "txtBookAuthorName_edit";
-            this.txtBookAuthorName_edit.Size = new System.Drawing.Size(200, 20);
+            this.txtBookAuthorName_edit.Size = new System.Drawing.Size(163, 20);
             this.txtBookAuthorName_edit.TabIndex = 24;
             // 
             // txtBookName_edit
             // 
-            this.txtBookName_edit.Location = new System.Drawing.Point(148, 14);
+            this.txtBookName_edit.Location = new System.Drawing.Point(6, 31);
             this.txtBookName_edit.Name = "txtBookName_edit";
-            this.txtBookName_edit.Size = new System.Drawing.Size(200, 20);
+            this.txtBookName_edit.Size = new System.Drawing.Size(163, 20);
             this.txtBookName_edit.TabIndex = 23;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(445, 110);
+            this.label6.Location = new System.Drawing.Point(3, 233);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(74, 13);
             this.label6.TabIndex = 22;
@@ -218,7 +242,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(445, 63);
+            this.label5.Location = new System.Drawing.Point(3, 189);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(59, 13);
             this.label5.TabIndex = 21;
@@ -227,7 +251,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(445, 21);
+            this.label4.Location = new System.Drawing.Point(3, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 13);
             this.label4.TabIndex = 20;
@@ -236,7 +260,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 110);
+            this.label3.Location = new System.Drawing.Point(3, 104);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(87, 13);
             this.label3.TabIndex = 19;
@@ -245,7 +269,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 63);
+            this.label8.Location = new System.Drawing.Point(3, 57);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(97, 13);
             this.label8.TabIndex = 18;
@@ -254,27 +278,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(31, 21);
+            this.label9.Location = new System.Drawing.Point(3, 15);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(63, 13);
             this.label9.TabIndex = 17;
             this.label9.Text = "Book Name";
             // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Location = new System.Drawing.Point(566, 152);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(200, 23);
-            this.btnUpdate.TabIndex = 31;
-            this.btnUpdate.Text = "Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
             // view_books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1195, 580);
+            this.ClientSize = new System.Drawing.Size(1066, 565);
             this.Controls.Add(this.panelEdit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -319,5 +333,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDelete;
     }
 }

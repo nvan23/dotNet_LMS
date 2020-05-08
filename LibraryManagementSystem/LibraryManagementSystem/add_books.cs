@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,24 @@ namespace LibraryManagementSystem
     public partial class add_books : Form
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
-        int BookID;
+        //int BookID = 0;
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         public add_books()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         public void refesh()
@@ -95,6 +110,7 @@ namespace LibraryManagementSystem
             
             try
             {
+                /*
                 con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -102,24 +118,48 @@ namespace LibraryManagementSystem
                 cmd.ExecuteNonQuery();
                 BookID = Convert.ToInt32(cmd.ExecuteScalar());
                 con.Close();
+                */
+                refesh();
+                btnNew.Enabled = false;
+                btnSave.Enabled = true;
+                txtBookName.Focus();
             }
-            catch
+            catch(Exception ex)
             {
-                BookID = 0;
+                //BookID = 0;
+                MessageBox.Show(ex.Message.ToString());
             }
-
-            BookID++;
+            
+            //BookID++;
            
-            refesh();
-            txtBookID.Text = BookID.ToString();
-            btnNew.Enabled = false;
-            btnSave.Enabled = true;
-            txtBookName.Focus();
+            //refesh();
+            //txtBookID.Text = BookID.ToString();
+            
         }
 
         private void add_books_Load(object sender, EventArgs e)
         {
-            btnSave.Enabled = false;
+            btnSave.Enabled = true;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

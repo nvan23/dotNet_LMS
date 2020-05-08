@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace LibraryManagementSystem
 {
@@ -15,9 +16,23 @@ namespace LibraryManagementSystem
     {
         int count;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
+
+        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
+        private static extern IntPtr CreateRoundRectRgn
+        (
+            int nLeftRect,     // x-coordinate of upper-left corner
+            int nTopRect,      // y-coordinate of upper-left corner
+            int nRightRect,    // x-coordinate of lower-right corner
+            int nBottomRect,   // y-coordinate of lower-right corner
+            int nWidthEllipse, // height of ellipse
+            int nHeightEllipse // width of ellipse
+        );
+
         public login()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -90,6 +105,16 @@ namespace LibraryManagementSystem
         private void txtPassword_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void panel5_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }    
 }

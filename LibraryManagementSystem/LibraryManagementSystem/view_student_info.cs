@@ -30,6 +30,9 @@ namespace LibraryManagementSystem
             {
                 dgvStudent.Columns.Clear();
                 dgvStudent.Refresh();
+
+                panelStudent.Visible = false;
+
                 int index = 0;
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -130,6 +133,7 @@ namespace LibraryManagementSystem
 
         private void dgvStudent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            panelStudent.Visible = true;
             int index;
             index = Convert.ToInt32(dgvStudent.SelectedCells[0].Value.ToString());
 
@@ -143,13 +147,15 @@ namespace LibraryManagementSystem
             da.Fill(dt);
             foreach(DataRow dr in dt.Rows)
             {
+
+                //pictureBoxStudent_edit.ImageLocation = dr["student_image"].ToString();
+
                 txtStudentName_edit.Text = dr["student_name"].ToString();
                 txtEnrollmentNo_edit.Text = dr["student_enrollment_no"].ToString();
                 txtStudentDepartment_edit.Text = dr["student_department"].ToString();
                 txtStudentSeminar_edit.Text = dr["student_sem"].ToString();
                 txtStudentContactNo_edit.Text = dr["student_contact"].ToString();
                 txtStudentEmail_edit.Text = dr["student_email"].ToString();
-                //pictureBoxStudent_edit.Text = dr["student_iamge"].ToString();
             }
 
         }
@@ -159,6 +165,11 @@ namespace LibraryManagementSystem
             wanted_path = Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()));
             result = openFileImageEdit.ShowDialog();
             openFileImageEdit.Filter = "JPEG Files (*.jpeg)|*jpeg|PNG Files (*.png)|*.png|JPG Files (*.jpg)|*.jpg|GIF Files (*.gif)|*.gif";
+            if (result == DialogResult.OK) //Test result
+            {
+                pictureBoxStudent_edit.ImageLocation = openFileImageEdit.FileName;
+                pictureBoxStudent_edit.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
 
         private void btnUpdateStudent_Click(object sender, EventArgs e)
@@ -207,6 +218,36 @@ namespace LibraryManagementSystem
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index;
+                index = Convert.ToInt32(dgvStudent.SelectedCells[0].Value.ToString());
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "delete from student_info where id='" + index + "'";
+                cmd.ExecuteNonQuery();
+                fill_grid();
+                MessageBox.Show("Delete successfully!");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
+        private void panelStudent_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBoxStudent_edit_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

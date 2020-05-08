@@ -34,9 +34,9 @@
             // 
             // btnGenerateReport
             // 
-            this.btnGenerateReport.Location = new System.Drawing.Point(474, 27);
+            this.btnGenerateReport.Location = new System.Drawing.Point(928, 465);
             this.btnGenerateReport.Name = "btnGenerateReport";
-            this.btnGenerateReport.Size = new System.Drawing.Size(166, 20);
+            this.btnGenerateReport.Size = new System.Drawing.Size(166, 26);
             this.btnGenerateReport.TabIndex = 0;
             this.btnGenerateReport.Text = "Generate Report";
             this.btnGenerateReport.UseVisualStyleBackColor = true;
@@ -47,16 +47,16 @@
             this.crystalReportViewer1.ActiveViewIndex = -1;
             this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.crystalReportViewer1.Location = new System.Drawing.Point(123, 72);
+            this.crystalReportViewer1.Location = new System.Drawing.Point(12, 12);
             this.crystalReportViewer1.Name = "crystalReportViewer1";
-            this.crystalReportViewer1.Size = new System.Drawing.Size(906, 401);
+            this.crystalReportViewer1.Size = new System.Drawing.Size(1082, 447);
             this.crystalReportViewer1.TabIndex = 1;
             // 
             // report_books_remain_retain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1130, 561);
+            this.ClientSize = new System.Drawing.Size(1111, 511);
             this.Controls.Add(this.crystalReportViewer1);
             this.Controls.Add(this.btnGenerateReport);
             this.Name = "report_books_remain_retain";

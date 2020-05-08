@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dgvReturnBooks = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtEnrollmentNo_return = new System.Windows.Forms.TextBox();
             this.btnSearchBooks_return = new System.Windows.Forms.Button();
+            this.txtEnrollmentNo_return = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.dgvReturnBooks = new System.Windows.Forms.DataGridView();
             this.panelReturnBook_update = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnReturn = new System.Windows.Forms.Button();
-            this.dtpBookReturnDate = new System.Windows.Forms.DateTimePicker();
-            this.panelReturnBooks = new System.Windows.Forms.Panel();
-            this.txtBookName_return = new System.Windows.Forms.TextBox();
             this.txtIssueDate_return = new System.Windows.Forms.TextBox();
+            this.txtBookName_return = new System.Windows.Forms.TextBox();
+            this.dtpBookReturnDate = new System.Windows.Forms.DateTimePicker();
+            this.btnReturn = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panelReturnBooks = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvReturnBooks)).BeginInit();
             this.panelReturnBook_update.SuspendLayout();
@@ -58,32 +58,6 @@
             this.panel1.Size = new System.Drawing.Size(194, 101);
             this.panel1.TabIndex = 0;
             // 
-            // dgvReturnBooks
-            // 
-            this.dgvReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvReturnBooks.Location = new System.Drawing.Point(3, 9);
-            this.dgvReturnBooks.Name = "dgvReturnBooks";
-            this.dgvReturnBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvReturnBooks.Size = new System.Drawing.Size(1060, 390);
-            this.dgvReturnBooks.TabIndex = 1;
-            this.dgvReturnBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturnBooks_CellClick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(104, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter Enrollment No.";
-            // 
-            // txtEnrollmentNo_return
-            // 
-            this.txtEnrollmentNo_return.Location = new System.Drawing.Point(16, 27);
-            this.txtEnrollmentNo_return.Name = "txtEnrollmentNo_return";
-            this.txtEnrollmentNo_return.Size = new System.Drawing.Size(173, 20);
-            this.txtEnrollmentNo_return.TabIndex = 1;
-            // 
             // btnSearchBooks_return
             // 
             this.btnSearchBooks_return.Location = new System.Drawing.Point(16, 53);
@@ -94,6 +68,33 @@
             this.btnSearchBooks_return.UseVisualStyleBackColor = true;
             this.btnSearchBooks_return.Click += new System.EventHandler(this.btnSearchBooks_return_Click);
             // 
+            // txtEnrollmentNo_return
+            // 
+            this.txtEnrollmentNo_return.Location = new System.Drawing.Point(16, 27);
+            this.txtEnrollmentNo_return.Name = "txtEnrollmentNo_return";
+            this.txtEnrollmentNo_return.Size = new System.Drawing.Size(173, 20);
+            this.txtEnrollmentNo_return.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(13, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(104, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter Enrollment No.";
+            // 
+            // dgvReturnBooks
+            // 
+            this.dgvReturnBooks.AllowUserToAddRows = false;
+            this.dgvReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvReturnBooks.Location = new System.Drawing.Point(15, 9);
+            this.dgvReturnBooks.Name = "dgvReturnBooks";
+            this.dgvReturnBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvReturnBooks.Size = new System.Drawing.Size(1048, 390);
+            this.dgvReturnBooks.TabIndex = 1;
+            this.dgvReturnBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturnBooks_CellClick);
+            // 
             // panelReturnBook_update
             // 
             this.panelReturnBook_update.Controls.Add(this.txtIssueDate_return);
@@ -103,57 +104,73 @@
             this.panelReturnBook_update.Controls.Add(this.label4);
             this.panelReturnBook_update.Controls.Add(this.label3);
             this.panelReturnBook_update.Controls.Add(this.label2);
-            this.panelReturnBook_update.Location = new System.Drawing.Point(213, 411);
+            this.panelReturnBook_update.Location = new System.Drawing.Point(10, 174);
             this.panelReturnBook_update.Name = "panelReturnBook_update";
-            this.panelReturnBook_update.Size = new System.Drawing.Size(291, 230);
+            this.panelReturnBook_update.Size = new System.Drawing.Size(192, 239);
             this.panelReturnBook_update.TabIndex = 2;
             this.panelReturnBook_update.Visible = false;
             // 
-            // label2
+            // txtIssueDate_return
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 28);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Book Name";
+            this.txtIssueDate_return.Location = new System.Drawing.Point(16, 107);
+            this.txtIssueDate_return.Name = "txtIssueDate_return";
+            this.txtIssueDate_return.ReadOnly = true;
+            this.txtIssueDate_return.Size = new System.Drawing.Size(173, 20);
+            this.txtIssueDate_return.TabIndex = 19;
             // 
-            // label3
+            // txtBookName_return
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 70);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 13);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Issue Date";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 111);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Select Return Date";
-            // 
-            // btnReturn
-            // 
-            this.btnReturn.Location = new System.Drawing.Point(38, 168);
-            this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(200, 23);
-            this.btnReturn.TabIndex = 3;
-            this.btnReturn.Text = "Return";
-            this.btnReturn.UseVisualStyleBackColor = true;
-            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            this.txtBookName_return.Location = new System.Drawing.Point(16, 52);
+            this.txtBookName_return.Name = "txtBookName_return";
+            this.txtBookName_return.ReadOnly = true;
+            this.txtBookName_return.Size = new System.Drawing.Size(173, 20);
+            this.txtBookName_return.TabIndex = 18;
             // 
             // dtpBookReturnDate
             // 
             this.dtpBookReturnDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpBookReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookReturnDate.Location = new System.Drawing.Point(38, 127);
+            this.dtpBookReturnDate.Location = new System.Drawing.Point(16, 161);
             this.dtpBookReturnDate.Name = "dtpBookReturnDate";
-            this.dtpBookReturnDate.Size = new System.Drawing.Size(200, 20);
+            this.dtpBookReturnDate.Size = new System.Drawing.Size(173, 20);
             this.dtpBookReturnDate.TabIndex = 17;
+            // 
+            // btnReturn
+            // 
+            this.btnReturn.Location = new System.Drawing.Point(16, 207);
+            this.btnReturn.Name = "btnReturn";
+            this.btnReturn.Size = new System.Drawing.Size(173, 23);
+            this.btnReturn.TabIndex = 3;
+            this.btnReturn.Text = "Return";
+            this.btnReturn.UseVisualStyleBackColor = true;
+            this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Select Return Date";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(13, 91);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 13);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Issue Date";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(13, 36);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Book Name";
             // 
             // panelReturnBooks
             // 
@@ -164,27 +181,11 @@
             this.panelReturnBooks.TabIndex = 3;
             this.panelReturnBooks.Visible = false;
             // 
-            // txtBookName_return
-            // 
-            this.txtBookName_return.Location = new System.Drawing.Point(38, 47);
-            this.txtBookName_return.Name = "txtBookName_return";
-            this.txtBookName_return.ReadOnly = true;
-            this.txtBookName_return.Size = new System.Drawing.Size(200, 20);
-            this.txtBookName_return.TabIndex = 18;
-            // 
-            // txtIssueDate_return
-            // 
-            this.txtIssueDate_return.Location = new System.Drawing.Point(38, 88);
-            this.txtIssueDate_return.Name = "txtIssueDate_return";
-            this.txtIssueDate_return.ReadOnly = true;
-            this.txtIssueDate_return.Size = new System.Drawing.Size(200, 20);
-            this.txtIssueDate_return.TabIndex = 19;
-            // 
             // return_books
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1280, 653);
+            this.ClientSize = new System.Drawing.Size(1294, 425);
             this.Controls.Add(this.panelReturnBooks);
             this.Controls.Add(this.panelReturnBook_update);
             this.Controls.Add(this.panel1);
