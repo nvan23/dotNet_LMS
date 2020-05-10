@@ -23,41 +23,7 @@ namespace LibraryManagementSystem
         {
             InitializeComponent();
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private bool checkData_add_student()
         {
@@ -163,15 +129,34 @@ namespace LibraryManagementSystem
                 }
             }
         }
-
-        private void pictureBoxStudent_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void add_student_info_Load(object sender, EventArgs e)
         {
-            txtStudentName.Focus();
+        }
+
+        private void refesh()
+        {
+            txtStudentName.Text = "";
+            txtEnrollmentNo.Text = "";
+            txtStudentDepartment.Text = "";
+            txtStudentContactNo.Text = "";
+            txtStudentEmail.Text = "";
+            txtStudentSeminar.Text = "";
+            pictureBoxStudent.Image = null;
+        }
+
+        private void btnNew_student_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                refesh();
+                txtStudentName.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

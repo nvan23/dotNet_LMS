@@ -25,10 +25,10 @@ namespace LibraryManagementSystem
             int index = 0;
             try
             {
-                con.Open();
+                panelEdit.Visible = false;
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info";
+                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -46,12 +46,9 @@ namespace LibraryManagementSystem
                 */
 
                 dgvViewBooks.DataSource = dt;
-
                 
-
                 index = Convert.ToInt32(dt.Rows.Count.ToString());
-                con.Close();
-
+                
                 if (index == 0)
                 {
                     MessageBox.Show("No data");
@@ -65,6 +62,11 @@ namespace LibraryManagementSystem
 
         private void view_books_Load(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
             display_books();   
         }
 
@@ -73,10 +75,9 @@ namespace LibraryManagementSystem
             int index = 0;
             try
             {
-                con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where books_name like('%" + txtSearchBook.Text + "%')";
+                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('"+txtSearchBookName.Text+"')";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -85,9 +86,7 @@ namespace LibraryManagementSystem
                 dgvViewBooks.DataSource = dt;
 
                 index = Convert.ToInt32(dt.Rows.Count.ToString());
-
-                con.Close();
-
+                
                 if (index == 0)
                 {
                     MessageBox.Show("No data");
@@ -103,19 +102,16 @@ namespace LibraryManagementSystem
         {
             try
             {
-                con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where books_name like('%" + txtSearchBook.Text + "%')";
+                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('" + txtSearchBookName.Text + "')";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgvViewBooks.DataSource = dt;
-
-                con.Close();
-                
+                                
             }
             catch (Exception ex)
             {
@@ -123,64 +119,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        private void btnSearchAuthor_Click(object sender, EventArgs e)
-        {
-            int index = 0;
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where books_author_name like('%" + txtSeachAuthor.Text + "%')";
-                cmd.ExecuteNonQuery();
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dgvViewBooks.DataSource = dt;
-
-                index = Convert.ToInt32(dt.Rows.Count.ToString());
-
-                con.Close();
-
-                if (index == 0)
-                {
-                    MessageBox.Show("No data");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void txtSeachAuthor_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where books_author_name like('%" + txtSeachAuthor.Text + "%')";
-                cmd.ExecuteNonQuery();
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                
-
-                dgvViewBooks.DataSource = dt;
-
-
-                con.Close();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
+       
         private void dgvViewBooks_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int index;
@@ -190,7 +129,7 @@ namespace LibraryManagementSystem
             {
                 btnDelete.Visible = true;
                 panelEdit.Visible = true;
-                con.Open();
+
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from books_info where id="+index+"";
@@ -209,36 +148,68 @@ namespace LibraryManagementSystem
                     txtBookPrice_edit.Text = dr["books_price"].ToString();
                     txtQuantity_edit.Text = dr["books_quantity"].ToString();
                 }
-                con.Close();
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString());
             }
 
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void auto_update()
         {
             int index;
             index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
             try
             {
-                con.Open();
+                btnDelete.Visible = true;
+                panelEdit.Visible = true;
+
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update books_info set books_name='"+ txtBookName_edit.Text +"',books_author_name='"+ txtBookAuthorName_edit.Text +"',books_publication_name='"+ txtBookPublication_edit.Text +"',books_purchase_date='"+ dtpBookPurchaseDate_edit.Value +"',books_price="+ txtBookPrice_edit.Text +",books_quantity='"+ txtQuantity_edit.Text +"' where id="+index+"";
+                cmd.CommandText = "select * from books_info where id=" + index + "";
                 cmd.ExecuteNonQuery();
-                con.Close();
-                display_books();
-                MessageBox.Show("Update successfully!");
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    txtBookName_edit.Text = dr["books_name"].ToString();
+                    txtBookAuthorName_edit.Text = dr["books_author_name"].ToString();
+                    txtBookPublication_edit.Text = dr["books_publication_name"].ToString();
+                    dtpBookPurchaseDate_edit.Value = Convert.ToDateTime(dr["books_purchase_date"].ToString());
+                    txtBookPrice_edit.Text = dr["books_price"].ToString();
+                    txtQuantity_edit.Text = dr["books_quantity"].ToString();
+                }
 
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int index;
+                index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "update books_info set books_name='" + txtBookName_edit.Text + "',books_author_name='" + txtBookAuthorName_edit.Text + "',books_publication_name='" + txtBookPublication_edit.Text + "',books_purchase_date='" + dtpBookPurchaseDate_edit.Value + "',books_price=" + txtBookPrice_edit.Text + ",books_quantity='" + txtQuantity_edit.Text + "',available_book='" + txtQuantity_edit.Text + "' where id=" + index + "";
+                cmd.ExecuteNonQuery();
+                display_books();
+                MessageBox.Show("Update successfully!");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }    
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -247,12 +218,11 @@ namespace LibraryManagementSystem
             index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
             try
             {
-                con.Open();
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "delete from books_info where id='" + index + "'";
                 cmd.ExecuteNonQuery();
-                con.Close();
+
                 display_books();
                 MessageBox.Show("Delete successfully!");
 
@@ -263,11 +233,9 @@ namespace LibraryManagementSystem
             }
         }
 
-        /*
-        private void btnSearchAuthor_Click(object sender, KeyEventArgs e)
+        private void btnCancel_update_books_Click(object sender, EventArgs e)
         {
-
+            display_books();
         }
-        */
     }
 }

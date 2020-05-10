@@ -41,8 +41,8 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="FontAwesome.Sharp">
-      <HintPath>C:\Users\NhanVan\Downloads\fontawesome.sharp.5.12.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -133,6 +133,12 @@
     <Compile Include="return_books.Designer.cs">
       <DependentUpon>return_books.cs</DependentUpon>
     </Compile>
+    <Compile Include="send_mail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="send_mail.Designer.cs">
+      <DependentUpon>send_mail.cs</DependentUpon>
+    </Compile>
     <Compile Include="view_books.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     <EmbeddedResource Include="return_books.resx">
       <DependentUpon>return_books.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="send_mail.resx">
+      <DependentUpon>send_mail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view_books.resx">
       <DependentUpon>view_books.cs</DependentUpon>
     </EmbeddedResource>
@@ -202,6 +211,7 @@
     <None Include="DataSet1.xss">
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

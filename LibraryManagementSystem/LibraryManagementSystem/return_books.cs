@@ -20,13 +20,35 @@ namespace LibraryManagementSystem
             InitializeComponent();
         }
 
+        public void load_data()
+        {
+            try
+            {
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where books_return_date=''";
+                //cmd.CommandText = "select * from issue_books where books_return_date=''";
+                cmd.ExecuteNonQuery();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgvReturnBooks.DataSource = dt;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+        }
+
         public void fill_grid(string enrollment)
         {
             try
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from issue_books where student_enrollment_no='"+ enrollment.ToString() +"' and books_return_date=''";
+                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where student_enrollment_no='" + enrollment.ToString() +"' and books_return_date=''";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -48,11 +70,11 @@ namespace LibraryManagementSystem
                 con.Close();
             }
             con.Open();
+            load_data();
         }
 
         private void btnSearchBooks_return_Click(object sender, EventArgs e)
         {
-            panelReturnBooks.Visible = true;
             fill_grid(txtEnrollmentNo_return.Text);
         }
 
@@ -60,23 +82,27 @@ namespace LibraryManagementSystem
         {
             try
             {
-                panelReturnBook_update.Visible = true;
+                //panelReturnBook_update.Visible = true;
                 int index;
                 index = Convert.ToInt32(dgvReturnBooks.SelectedCells[0].Value.ToString());
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from issue_books where Id="+index+"";
+                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where Id=" + index+"";
                 cmd.ExecuteNonQuery();
+                
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
 
-                foreach(DataRow dr in dt.Rows)
+                foreach (DataRow dr in dt.Rows)
                 {
-                    txtBookName_return.Text = dr["books_name"].ToString();
-                    txtIssueDate_return.Text = Convert.ToString(dr["books_issue_date"].ToString());
+                    txtBookName_return.Text = dr["Book_Name"].ToString();
+                    txtIssueDate_return.Text = Convert.ToString(dr["Issue_Date"].ToString());
+                    dtpBookReturnDate.MinDate = Convert.ToDateTime(dr["Issue_Date"].ToString());
                 }
+
+                
 
             }
             catch (Exception ex)
@@ -104,14 +130,23 @@ namespace LibraryManagementSystem
                 cmd1.ExecuteNonQuery();
 
                 MessageBox.Show("Books Return Successfully");
-                panelReturnBooks.Visible = true;
-                panelReturnBook_update.Visible = false;
-                fill_grid(txtEnrollmentNo_return.Text);
+                //panelReturnBook_update.Visible = false;
+                load_data();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message.ToString());
             }
+        }
+
+        private void txtEnrollmentNo_return_KeyUp(object sender, KeyEventArgs e)
+        {
+            fill_grid(txtEnrollmentNo_return.Text);
+        }
+
+        private void btnCancel_update_books_Click(object sender, EventArgs e)
+        {
+            load_data();
         }
     }
 }

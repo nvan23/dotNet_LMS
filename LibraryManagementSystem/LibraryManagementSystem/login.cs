@@ -14,7 +14,7 @@ namespace LibraryManagementSystem
 {
     public partial class login : Form
     {
-        int count;
+        int count = 0;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -42,7 +42,6 @@ namespace LibraryManagementSystem
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select * from library_person where username='" + txtUsername.Text + "' and password='" + txtPassword.Text + "'";
-                cmd.CommandText = "Select MAX(Id) from books_info";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -59,8 +58,10 @@ namespace LibraryManagementSystem
                 else
                 {
                     this.Hide();
-                    mdi_user _mdi_user = new mdi_user();
-                    _mdi_user.Show();
+                    //mdi_user _mdi_user = new mdi_user();
+                    //_mdi_user.Show();
+                    Home _home = new Home();
+                    _home.Show();
                 }
             }
         }
@@ -95,21 +96,6 @@ namespace LibraryManagementSystem
             }
             
             return true;
-        }
-
-        private void txtUsername_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPassword_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-            
         }
 
         private void panel5_Click(object sender, EventArgs e)

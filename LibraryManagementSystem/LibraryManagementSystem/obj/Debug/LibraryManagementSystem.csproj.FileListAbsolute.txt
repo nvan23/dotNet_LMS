@@ -35,7 +35,7 @@ D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSyst
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.report_books_remain_retain.resources
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\Bunifu_UI_v1.52.dll
-D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojAssemblyReference.cache
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.Home.resources
-D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CoreCompileInputs.cache
-D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csproj.CopyComplete
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\bin\Debug\FontAwesome.Sharp.dll
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.csprojResolveAssemblyReference.cache
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.send_mail.resources

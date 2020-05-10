@@ -14,7 +14,7 @@ namespace LibraryManagementSystem
 {
     public partial class add_books : Form
     {
-        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
+        SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True");
         //int BookID = 0;
 
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
@@ -95,7 +95,7 @@ namespace LibraryManagementSystem
                     con.Close();
                     
                     MessageBox.Show("Add book successfully", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    btnNew.Enabled = true;
+                    //btnNew.Enabled = true;
                     btnSave.Enabled = false;
                 }
                 else
@@ -107,33 +107,15 @@ namespace LibraryManagementSystem
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            
             try
             {
-                /*
-                con.Open();
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "Select MAX(Id) from books_info";
-                cmd.ExecuteNonQuery();
-                BookID = Convert.ToInt32(cmd.ExecuteScalar());
-                con.Close();
-                */
                 refesh();
-                btnNew.Enabled = false;
-                btnSave.Enabled = true;
                 txtBookName.Focus();
             }
             catch(Exception ex)
             {
-                //BookID = 0;
                 MessageBox.Show(ex.Message.ToString());
             }
-            
-            //BookID++;
-           
-            //refesh();
-            //txtBookID.Text = BookID.ToString();
             
         }
 
