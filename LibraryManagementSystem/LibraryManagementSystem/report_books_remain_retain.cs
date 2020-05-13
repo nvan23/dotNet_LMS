@@ -26,7 +26,7 @@ namespace LibraryManagementSystem
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
             //cmd.CommandText = "select * from issue_books where books_return_date=''";
-            cmd.CommandText = "select * from issue_books inner join user_details on issue_books.UID = user_details.UID inner join books_info on issue_books.UID = books_info.books_Id where books_return_date=''";
+            cmd.CommandText = "select * from issue_books inner join user_details on issue_books.UID = user_details.UID inner join books_info on issue_books.books_Id = books_info.books_Id where books_return_date=''";
             cmd.ExecuteNonQuery();
             DataTable dt = new DataTable();
             SqlDataAdapter da = new SqlDataAdapter(cmd);

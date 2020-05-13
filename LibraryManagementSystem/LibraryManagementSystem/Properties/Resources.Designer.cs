@@ -8,6 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
+using System.Drawing;
+
 namespace LibraryManagementSystem.Properties
 {
 
@@ -66,6 +69,11 @@ namespace LibraryManagementSystem.Properties
             {
                 resourceCulture = value;
             }
+        }
+
+        internal static Image GetObject(string v)
+        {
+            throw new NotImplementedException();
         }
     }
 }

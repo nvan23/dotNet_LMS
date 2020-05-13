@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using System.Data.SqlClient;
 using System.IO;
+using LibraryManagementSystem.Properties;
 
 namespace LibraryManagementSystem
 {
@@ -19,6 +20,7 @@ namespace LibraryManagementSystem
         private IconButton currentBtn;
         public Form currentChildForm;
         public string flag = "";
+        public static Bitmap img;
         DateTime checkout = DateTime.Now;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
         
@@ -34,9 +36,19 @@ namespace LibraryManagementSystem
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             HideBtn(btnCreateBook);
             HideBtn(iconBtnView);
-            
-        }
+            guest_scope();
 
+        }
+        
+
+
+        public void draw_avatar()
+        {
+            img = new Bitmap(@"..\..\" + login.get_image_location);
+            pictureBoxAvatar.Image = img;
+            pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+        }
+        
         public void access()
         {
             if (login.per_id == 1)
@@ -55,10 +67,10 @@ namespace LibraryManagementSystem
 
         private void Home_Load(object sender, EventArgs e)
         {
-            if (login.user_account_name != "")
+            if (login.uid != 0)
             {
-                MessageBox.Show("Welcome back " + login.user_account_name);
                 access();
+                draw_avatar();
             }
             else
             {
@@ -270,7 +282,9 @@ namespace LibraryManagementSystem
         private void btnLogin_CLick(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color7);
-            OpenChildForm(new login());
+            login _login = new login();
+            _login.Show();
+            this.Hide();
             btnLogin.Text = "Login";
         }
 
@@ -280,6 +294,7 @@ namespace LibraryManagementSystem
             login.user_account_name = "";
             login.status_id = 0;
             login.uid = 0;
+            pictureBoxAvatar.Image = null;
             guest_scope();
             btnLogin.Visible = true;
             if (currentChildForm != null)
@@ -381,6 +396,11 @@ namespace LibraryManagementSystem
                     OpenChildForm(new view_books());
                 }
             }
+        }
+
+        private void iconExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

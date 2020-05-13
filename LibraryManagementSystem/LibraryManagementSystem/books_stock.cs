@@ -51,12 +51,16 @@ namespace LibraryManagementSystem
             }
             con.Open();
             fill_books_info();
+            
         }
 
         private void dgvBooksStock_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
+                btnSend_stock.Text = "No Mail To Send";
+                txtEmail_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(185)))), ((int)(((byte)(185)))));
+                btnSend_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
                 string index;
                 index = dgvBook_stock.SelectedCells[0].Value.ToString();
 
@@ -82,12 +86,12 @@ namespace LibraryManagementSystem
         {
             try
             {
+                btnSend_stock.Text = "Send Mail Now";
+                btnSend_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+                txtEmail_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(214)))), ((int)(((byte)(251)))));
                 string get_email;
                 get_email = dgvBookReturn_stock.SelectedCells[3].Value.ToString();
                 txtEmail_stock.Text = get_email.ToString();
-                email = get_email.ToString();
-                send_mail _send_mail = new send_mail();
-                _send_mail.Show();
             }
             catch (Exception ex)
             {

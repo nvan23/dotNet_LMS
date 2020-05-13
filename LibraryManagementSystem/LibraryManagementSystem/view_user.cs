@@ -27,35 +27,56 @@ namespace LibraryManagementSystem
         {
             InitializeComponent();
             fill_grid();
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
         }
 
         public void get_all_role()
         {
-
-            //get all member of Role
-            SqlCommand cmd1 = new SqlCommand("Select * from permission", con);
-            SqlDataReader dr1 = cmd1.ExecuteReader();
-
-            DataTable dt1 = new DataTable();
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
-            DataColumn id_role = new DataColumn("per_Id");
-            DataColumn name_role = new DataColumn("per_Name");
-            dt1.Columns.Add(id_role);
-            dt1.Columns.Add(name_role);
-
-            while (dr1.Read())
+            if (con.State == ConnectionState.Open)
             {
-                dt1.Rows.Add(Convert.ToInt32(dr1[0]), dr1[1].ToString());
+                con.Close();
             }
+            con.Open();
+            try
+            {
+                //get all member of Role
+                SqlCommand cmd1 = new SqlCommand("Select * from permission", con);
+                SqlDataReader dr1 = cmd1.ExecuteReader();
 
-            cbo_role.DataSource = dt1;
-            cbo_role.ValueMember = "per_Id";
-            cbo_role.DisplayMember = "per_name";
-            dr1.Close();
+                DataTable dt1 = new DataTable();
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                DataColumn id_role = new DataColumn("per_Id");
+                DataColumn name_role = new DataColumn("per_Name");
+                dt1.Columns.Add(id_role);
+                dt1.Columns.Add(name_role);
+
+                while (dr1.Read())
+                {
+                    dt1.Rows.Add(Convert.ToInt32(dr1[0]), dr1[1].ToString());
+                }
+
+                cbo_role.DataSource = dt1;
+                cbo_role.ValueMember = "per_Id";
+                cbo_role.DisplayMember = "per_name";
+                dr1.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         public void get_all_status()
         {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
             //get all member of Status
             SqlCommand cmd2 = new SqlCommand("Select * from status_account", con);
             SqlDataReader dr2 = cmd2.ExecuteReader();

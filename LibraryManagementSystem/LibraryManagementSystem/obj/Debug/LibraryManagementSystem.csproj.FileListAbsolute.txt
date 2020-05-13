@@ -41,3 +41,4 @@ D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSyst
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.History.resources
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.account_user.resources
 D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.change_pasword.resources
+D:\HeeYee\Source\TaiLieuHocTap\Nam4_HocKi_2\dotNet\project\LibraryManagementSystem\LibraryManagementSystem\obj\Debug\LibraryManagementSystem.reset_password.resources

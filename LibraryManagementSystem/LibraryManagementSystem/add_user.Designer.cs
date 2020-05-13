@@ -49,19 +49,19 @@
             this.txt_user_full_name = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.cbo_block = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbo_role = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.button_user_female = new System.Windows.Forms.RadioButton();
             this.button_user_male = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_user_contact = new System.Windows.Forms.TextBox();
+            this.txt_user_card_id = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave_student = new System.Windows.Forms.Button();
             this.btnNew_student = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbo_role = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.cbo_block = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txt_user_card_id = new System.Windows.Forms.TextBox();
-            this.txt_user_contact = new System.Windows.Forms.TextBox();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.panel3.SuspendLayout();
@@ -309,6 +309,54 @@
             this.panel3.Size = new System.Drawing.Size(1034, 557);
             this.panel3.TabIndex = 6;
             // 
+            // cbo_block
+            // 
+            this.cbo_block.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbo_block.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.cbo_block.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_block.FormattingEnabled = true;
+            this.cbo_block.Location = new System.Drawing.Point(278, 337);
+            this.cbo_block.Name = "cbo_block";
+            this.cbo_block.Size = new System.Drawing.Size(217, 28);
+            this.cbo_block.TabIndex = 83;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(278, 310);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 24);
+            this.label3.TabIndex = 82;
+            this.label3.Text = "Block";
+            this.label3.UseCompatibleTextRendering = true;
+            // 
+            // cbo_role
+            // 
+            this.cbo_role.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbo_role.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.cbo_role.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_role.FormattingEnabled = true;
+            this.cbo_role.Location = new System.Drawing.Point(12, 336);
+            this.cbo_role.Name = "cbo_role";
+            this.cbo_role.Size = new System.Drawing.Size(220, 28);
+            this.cbo_role.TabIndex = 79;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(12, 310);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 24);
+            this.label11.TabIndex = 78;
+            this.label11.Text = "Role";
+            this.label11.UseCompatibleTextRendering = true;
+            // 
             // button_user_female
             // 
             this.button_user_female.AutoSize = true;
@@ -346,6 +394,26 @@
             this.label1.TabIndex = 57;
             this.label1.Text = "Gender";
             this.label1.UseCompatibleTextRendering = true;
+            // 
+            // txt_user_contact
+            // 
+            this.txt_user_contact.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_user_contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_contact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_contact.Location = new System.Drawing.Point(280, 188);
+            this.txt_user_contact.Name = "txt_user_contact";
+            this.txt_user_contact.Size = new System.Drawing.Size(202, 20);
+            this.txt_user_contact.TabIndex = 44;
+            // 
+            // txt_user_card_id
+            // 
+            this.txt_user_card_id.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_user_card_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_card_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_card_id.Location = new System.Drawing.Point(17, 188);
+            this.txt_user_card_id.Name = "txt_user_card_id";
+            this.txt_user_card_id.Size = new System.Drawing.Size(202, 20);
+            this.txt_user_card_id.TabIndex = 38;
             // 
             // panel2
             // 
@@ -395,70 +463,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1034, 50);
             this.panel1.TabIndex = 4;
-            // 
-            // cbo_role
-            // 
-            this.cbo_role.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.cbo_role.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_role.FormattingEnabled = true;
-            this.cbo_role.Location = new System.Drawing.Point(12, 336);
-            this.cbo_role.Name = "cbo_role";
-            this.cbo_role.Size = new System.Drawing.Size(220, 28);
-            this.cbo_role.TabIndex = 79;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(12, 310);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 24);
-            this.label11.TabIndex = 78;
-            this.label11.Text = "Role";
-            this.label11.UseCompatibleTextRendering = true;
-            // 
-            // cbo_block
-            // 
-            this.cbo_block.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.cbo_block.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_block.FormattingEnabled = true;
-            this.cbo_block.Location = new System.Drawing.Point(278, 337);
-            this.cbo_block.Name = "cbo_block";
-            this.cbo_block.Size = new System.Drawing.Size(217, 28);
-            this.cbo_block.TabIndex = 83;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(278, 310);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 24);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Block";
-            this.label3.UseCompatibleTextRendering = true;
-            // 
-            // txt_user_card_id
-            // 
-            this.txt_user_card_id.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_user_card_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_card_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_card_id.Location = new System.Drawing.Point(17, 188);
-            this.txt_user_card_id.Name = "txt_user_card_id";
-            this.txt_user_card_id.Size = new System.Drawing.Size(202, 20);
-            this.txt_user_card_id.TabIndex = 38;
-            // 
-            // txt_user_contact
-            // 
-            this.txt_user_contact.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_user_contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_contact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_contact.Location = new System.Drawing.Point(280, 188);
-            this.txt_user_contact.Name = "txt_user_contact";
-            this.txt_user_contact.Size = new System.Drawing.Size(202, 20);
-            this.txt_user_contact.TabIndex = 44;
             // 
             // add_user
             // 

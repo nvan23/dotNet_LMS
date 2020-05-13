@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvBook_stock = new System.Windows.Forms.DataGridView();
             this.txtSearchBooksStock = new System.Windows.Forms.TextBox();
             this.txtContent_stock = new System.Windows.Forms.TextBox();
@@ -60,14 +60,14 @@
             this.dgvBook_stock.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvBook_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBook_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBook_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBook_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvBook_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBook_stock.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dgvBook_stock.GridColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -143,13 +143,13 @@
             this.panel3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.panel3.Location = new System.Drawing.Point(129, 38);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(650, 2);
+            this.panel3.Size = new System.Drawing.Size(500, 2);
             this.panel3.TabIndex = 31;
             // 
             // btnSend_stock
             // 
             this.btnSend_stock.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSend_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnSend_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(121)))), ((int)(((byte)(121)))));
             this.btnSend_stock.FlatAppearance.BorderSize = 0;
             this.btnSend_stock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend_stock.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
@@ -166,14 +166,14 @@
             this.btnSend_stock.Rotation = 0D;
             this.btnSend_stock.Size = new System.Drawing.Size(261, 31);
             this.btnSend_stock.TabIndex = 32;
-            this.btnSend_stock.Text = "Send Mail";
+            this.btnSend_stock.Text = "No Mail To Send";
             this.btnSend_stock.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnSend_stock.UseVisualStyleBackColor = false;
             this.btnSend_stock.Click += new System.EventHandler(this.btnSend_stock_Click);
             // 
             // txtEmail_stock
             // 
-            this.txtEmail_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(214)))), ((int)(((byte)(251)))));
+            this.txtEmail_stock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(185)))), ((int)(((byte)(185)))));
             this.txtEmail_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtEmail_stock.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail_stock.ForeColor = System.Drawing.Color.Black;
@@ -253,14 +253,14 @@
             this.dgvBookReturn_stock.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
             this.dgvBookReturn_stock.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvBookReturn_stock.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBookReturn_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBookReturn_stock.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvBookReturn_stock.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBookReturn_stock.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.dgvBookReturn_stock.GridColor = System.Drawing.SystemColors.ControlDarkDark;

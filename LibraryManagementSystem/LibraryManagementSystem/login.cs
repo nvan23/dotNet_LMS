@@ -30,8 +30,7 @@ namespace LibraryManagementSystem
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-
-        private login_session _login_session;
+        
 
         public login()
         {
@@ -114,12 +113,24 @@ namespace LibraryManagementSystem
         public static int per_id = 0;
         public static int status_id = 0;
         public static string get_current_mail = "";
+        public static string get_image_location = "";
+
+        private void btnMaximize_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+        }
+        private void btnMinimize_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
+        }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
             if (checkData())
             {
-                _login_session = new login_session();
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -148,6 +159,7 @@ namespace LibraryManagementSystem
                         user_account_name = dr["user_account_name"].ToString();
                         uid = Convert.ToInt32(dr["uid"].ToString());
                         get_current_mail = dr["user_email"].ToString();
+                        get_image_location = dr["user_image"].ToString();
                         if (status_id == 1)
                         {
                             MessageBox.Show("Your Account is blocked");
@@ -156,6 +168,7 @@ namespace LibraryManagementSystem
                         {
                             Home _home = new Home();
                             _home.Show();
+                            this.Hide();
                         }
                     }
                 }
@@ -196,7 +209,28 @@ namespace LibraryManagementSystem
 
         private void panel5_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            Home _home = new Home();
+            _home.Show();
+            this.Close();
+        }
+
+        private void iconExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void iconHome_Click(object sender, EventArgs e)
+        {
+            Home _home = new Home();
+            _home.Show();
+            this.Close();
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+            reset_password _reset_password = new reset_password();
+            _reset_password.Show();
+            this.Close();
         }
     }    
 }

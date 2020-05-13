@@ -35,34 +35,36 @@
             this.btnChangePassword = new System.Windows.Forms.Button();
             this.btn_view_cancel = new System.Windows.Forms.Button();
             this.openFileImage = new System.Windows.Forms.OpenFileDialog();
-            this.txt_user_full_name = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txt_user_account_name = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.txt_user_department = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_user_card_id = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.txt_user_contact = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
             this.pictureBoxUser = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button_account_male = new System.Windows.Forms.RadioButton();
-            this.button_account_female = new System.Windows.Forms.RadioButton();
-            this.txt_user_email = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.cbo_block = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbo_role = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.txt_user_email = new System.Windows.Forms.TextBox();
+            this.button_account_female = new System.Windows.Forms.RadioButton();
+            this.button_account_male = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txt_user_contact = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txt_user_card_id = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txt_user_department = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.txt_user_account_name = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txt_user_full_name = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -135,7 +137,7 @@
             this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnChangePassword.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChangePassword.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnChangePassword.Location = new System.Drawing.Point(841, 8);
+            this.btnChangePassword.Location = new System.Drawing.Point(841, 9);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(181, 33);
             this.btnChangePassword.TabIndex = 75;
@@ -161,162 +163,6 @@
             // 
             this.openFileImage.FileName = "openFileDialog1";
             // 
-            // txt_user_full_name
-            // 
-            this.txt_user_full_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_user_full_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
-            this.txt_user_full_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_full_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_full_name.Location = new System.Drawing.Point(21, 111);
-            this.txt_user_full_name.Multiline = true;
-            this.txt_user_full_name.Name = "txt_user_full_name";
-            this.txt_user_full_name.Size = new System.Drawing.Size(462, 29);
-            this.txt_user_full_name.TabIndex = 31;
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(18, 80);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(80, 24);
-            this.label9.TabIndex = 33;
-            this.label9.Text = "Full Name";
-            this.label9.UseCompatibleTextRendering = true;
-            // 
-            // txt_user_account_name
-            // 
-            this.txt_user_account_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_user_account_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
-            this.txt_user_account_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_account_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_account_name.Location = new System.Drawing.Point(21, 38);
-            this.txt_user_account_name.Multiline = true;
-            this.txt_user_account_name.Name = "txt_user_account_name";
-            this.txt_user_account_name.Size = new System.Drawing.Size(462, 29);
-            this.txt_user_account_name.TabIndex = 32;
-            // 
-            // label13
-            // 
-            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(18, 12);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(120, 24);
-            this.label13.TabIndex = 35;
-            this.label13.Text = "Account Name";
-            this.label13.UseCompatibleTextRendering = true;
-            // 
-            // panel6
-            // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(21, 298);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(462, 1);
-            this.panel6.TabIndex = 40;
-            // 
-            // txt_user_department
-            // 
-            this.txt_user_department.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_user_department.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_user_department.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_department.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_department.Location = new System.Drawing.Point(23, 264);
-            this.txt_user_department.Multiline = true;
-            this.txt_user_department.Name = "txt_user_department";
-            this.txt_user_department.Size = new System.Drawing.Size(460, 33);
-            this.txt_user_department.TabIndex = 37;
-            // 
-            // label6
-            // 
-            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(18, 234);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 24);
-            this.label6.TabIndex = 39;
-            this.label6.Text = "Department";
-            this.label6.UseCompatibleTextRendering = true;
-            // 
-            // txt_user_card_id
-            // 
-            this.txt_user_card_id.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_user_card_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
-            this.txt_user_card_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_card_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_card_id.Location = new System.Drawing.Point(21, 190);
-            this.txt_user_card_id.Multiline = true;
-            this.txt_user_card_id.Name = "txt_user_card_id";
-            this.txt_user_card_id.Size = new System.Drawing.Size(190, 29);
-            this.txt_user_card_id.TabIndex = 38;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(18, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 24);
-            this.label2.TabIndex = 41;
-            this.label2.Text = "Cart ID";
-            this.label2.UseCompatibleTextRendering = true;
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(18, 384);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(46, 24);
-            this.label10.TabIndex = 45;
-            this.label10.Text = "Email";
-            this.label10.UseCompatibleTextRendering = true;
-            // 
-            // txt_user_contact
-            // 
-            this.txt_user_contact.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txt_user_contact.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.txt_user_contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt_user_contact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_contact.Location = new System.Drawing.Point(239, 186);
-            this.txt_user_contact.Multiline = true;
-            this.txt_user_contact.Name = "txt_user_contact";
-            this.txt_user_contact.Size = new System.Drawing.Size(244, 32);
-            this.txt_user_contact.TabIndex = 44;
-            // 
-            // panel8
-            // 
-            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Location = new System.Drawing.Point(237, 220);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(246, 1);
-            this.panel8.TabIndex = 48;
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(234, 159);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(66, 24);
-            this.label8.TabIndex = 47;
-            this.label8.Text = "Contact";
-            this.label8.UseCompatibleTextRendering = true;
-            // 
             // panel10
             // 
             this.panel10.Controls.Add(this.pictureBoxUser);
@@ -335,46 +181,94 @@
             this.pictureBoxUser.TabIndex = 16;
             this.pictureBoxUser.TabStop = false;
             // 
-            // label1
+            // panel3
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(21, 462);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 24);
-            this.label1.TabIndex = 57;
-            this.label1.Text = "Gender";
-            this.label1.UseCompatibleTextRendering = true;
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Controls.Add(this.panel10);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 52);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1034, 557);
+            this.panel3.TabIndex = 9;
             // 
-            // button_account_male
+            // panel4
             // 
-            this.button_account_male.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_account_male.AutoSize = true;
-            this.button_account_male.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_account_male.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button_account_male.Location = new System.Drawing.Point(23, 500);
-            this.button_account_male.Name = "button_account_male";
-            this.button_account_male.Size = new System.Drawing.Size(64, 22);
-            this.button_account_male.TabIndex = 58;
-            this.button_account_male.TabStop = true;
-            this.button_account_male.Text = "Male";
-            this.button_account_male.UseVisualStyleBackColor = true;
+            this.panel4.Controls.Add(this.cbo_block);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Controls.Add(this.cbo_role);
+            this.panel4.Controls.Add(this.label11);
+            this.panel4.Controls.Add(this.txt_user_email);
+            this.panel4.Controls.Add(this.button_account_female);
+            this.panel4.Controls.Add(this.button_account_male);
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.label8);
+            this.panel4.Controls.Add(this.panel8);
+            this.panel4.Controls.Add(this.txt_user_contact);
+            this.panel4.Controls.Add(this.label10);
+            this.panel4.Controls.Add(this.label2);
+            this.panel4.Controls.Add(this.txt_user_card_id);
+            this.panel4.Controls.Add(this.label6);
+            this.panel4.Controls.Add(this.txt_user_department);
+            this.panel4.Controls.Add(this.panel6);
+            this.panel4.Controls.Add(this.label13);
+            this.panel4.Controls.Add(this.txt_user_account_name);
+            this.panel4.Controls.Add(this.label9);
+            this.panel4.Controls.Add(this.txt_user_full_name);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(604, 557);
+            this.panel4.TabIndex = 57;
             // 
-            // button_account_female
+            // cbo_block
             // 
-            this.button_account_female.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.button_account_female.AutoSize = true;
-            this.button_account_female.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_account_female.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button_account_female.Location = new System.Drawing.Point(130, 500);
-            this.button_account_female.Name = "button_account_female";
-            this.button_account_female.Size = new System.Drawing.Size(81, 22);
-            this.button_account_female.TabIndex = 59;
-            this.button_account_female.TabStop = true;
-            this.button_account_female.Text = "Female";
-            this.button_account_female.UseVisualStyleBackColor = true;
+            this.cbo_block.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbo_block.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.cbo_block.Enabled = false;
+            this.cbo_block.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_block.FormattingEnabled = true;
+            this.cbo_block.Location = new System.Drawing.Point(231, 346);
+            this.cbo_block.Name = "cbo_block";
+            this.cbo_block.Size = new System.Drawing.Size(249, 28);
+            this.cbo_block.TabIndex = 108;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(236, 320);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 24);
+            this.label3.TabIndex = 107;
+            this.label3.Text = "Block";
+            this.label3.UseCompatibleTextRendering = true;
+            // 
+            // cbo_role
+            // 
+            this.cbo_role.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbo_role.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.cbo_role.Enabled = false;
+            this.cbo_role.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_role.FormattingEnabled = true;
+            this.cbo_role.Location = new System.Drawing.Point(16, 346);
+            this.cbo_role.Name = "cbo_role";
+            this.cbo_role.Size = new System.Drawing.Size(192, 28);
+            this.cbo_role.TabIndex = 106;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label11.Location = new System.Drawing.Point(16, 320);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(38, 24);
+            this.label11.TabIndex = 105;
+            this.label11.Text = "Role";
+            this.label11.UseCompatibleTextRendering = true;
             // 
             // txt_user_email
             // 
@@ -382,85 +276,212 @@
             this.txt_user_email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
             this.txt_user_email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txt_user_email.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_user_email.Location = new System.Drawing.Point(21, 416);
+            this.txt_user_email.Location = new System.Drawing.Point(16, 418);
             this.txt_user_email.Multiline = true;
             this.txt_user_email.Name = "txt_user_email";
+            this.txt_user_email.ReadOnly = true;
             this.txt_user_email.Size = new System.Drawing.Size(462, 29);
-            this.txt_user_email.TabIndex = 43;
+            this.txt_user_email.TabIndex = 97;
             // 
-            // panel3
+            // button_account_female
             // 
-            this.panel3.Controls.Add(this.cbo_block);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.cbo_role);
-            this.panel3.Controls.Add(this.label11);
-            this.panel3.Controls.Add(this.txt_user_email);
-            this.panel3.Controls.Add(this.button_account_female);
-            this.panel3.Controls.Add(this.button_account_male);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.panel10);
-            this.panel3.Controls.Add(this.label8);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.txt_user_contact);
-            this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.txt_user_card_id);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.txt_user_department);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.txt_user_account_name);
-            this.panel3.Controls.Add(this.label9);
-            this.panel3.Controls.Add(this.txt_user_full_name);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 52);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1034, 557);
-            this.panel3.TabIndex = 9;
+            this.button_account_female.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_account_female.AutoSize = true;
+            this.button_account_female.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_account_female.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_account_female.Location = new System.Drawing.Point(125, 502);
+            this.button_account_female.Name = "button_account_female";
+            this.button_account_female.Size = new System.Drawing.Size(81, 22);
+            this.button_account_female.TabIndex = 104;
+            this.button_account_female.TabStop = true;
+            this.button_account_female.Text = "Female";
+            this.button_account_female.UseVisualStyleBackColor = true;
             // 
-            // cbo_block
+            // button_account_male
             // 
-            this.cbo_block.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.cbo_block.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_block.FormattingEnabled = true;
-            this.cbo_block.Location = new System.Drawing.Point(234, 340);
-            this.cbo_block.Name = "cbo_block";
-            this.cbo_block.Size = new System.Drawing.Size(249, 28);
-            this.cbo_block.TabIndex = 87;
+            this.button_account_male.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.button_account_male.AutoSize = true;
+            this.button_account_male.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_account_male.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button_account_male.Location = new System.Drawing.Point(18, 502);
+            this.button_account_male.Name = "button_account_male";
+            this.button_account_male.Size = new System.Drawing.Size(64, 22);
+            this.button_account_male.TabIndex = 103;
+            this.button_account_male.TabStop = true;
+            this.button_account_male.Text = "Male";
+            this.button_account_male.UseVisualStyleBackColor = true;
             // 
-            // label3
+            // label1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(239, 314);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 24);
-            this.label3.TabIndex = 86;
-            this.label3.Text = "Block";
-            this.label3.UseCompatibleTextRendering = true;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(16, 464);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 24);
+            this.label1.TabIndex = 102;
+            this.label1.Text = "Gender";
+            this.label1.UseCompatibleTextRendering = true;
             // 
-            // cbo_role
+            // label8
             // 
-            this.cbo_role.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.cbo_role.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_role.FormattingEnabled = true;
-            this.cbo_role.Location = new System.Drawing.Point(19, 340);
-            this.cbo_role.Name = "cbo_role";
-            this.cbo_role.Size = new System.Drawing.Size(192, 28);
-            this.cbo_role.TabIndex = 85;
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(229, 161);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(66, 24);
+            this.label8.TabIndex = 100;
+            this.label8.Text = "Contact";
+            this.label8.UseCompatibleTextRendering = true;
             // 
-            // label11
+            // panel8
             // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(19, 314);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(38, 24);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Role";
-            this.label11.UseCompatibleTextRendering = true;
+            this.panel8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel8.Location = new System.Drawing.Point(232, 222);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(246, 1);
+            this.panel8.TabIndex = 101;
+            // 
+            // txt_user_contact
+            // 
+            this.txt_user_contact.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_user_contact.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_user_contact.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_contact.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_contact.Location = new System.Drawing.Point(234, 188);
+            this.txt_user_contact.Multiline = true;
+            this.txt_user_contact.Name = "txt_user_contact";
+            this.txt_user_contact.Size = new System.Drawing.Size(244, 32);
+            this.txt_user_contact.TabIndex = 98;
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(13, 386);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(46, 24);
+            this.label10.TabIndex = 99;
+            this.label10.Text = "Email";
+            this.label10.UseCompatibleTextRendering = true;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(13, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(57, 24);
+            this.label2.TabIndex = 96;
+            this.label2.Text = "Cart ID";
+            this.label2.UseCompatibleTextRendering = true;
+            // 
+            // txt_user_card_id
+            // 
+            this.txt_user_card_id.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_user_card_id.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
+            this.txt_user_card_id.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_card_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_card_id.Location = new System.Drawing.Point(16, 192);
+            this.txt_user_card_id.Multiline = true;
+            this.txt_user_card_id.Name = "txt_user_card_id";
+            this.txt_user_card_id.ReadOnly = true;
+            this.txt_user_card_id.Size = new System.Drawing.Size(190, 29);
+            this.txt_user_card_id.TabIndex = 93;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(13, 236);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(94, 24);
+            this.label6.TabIndex = 94;
+            this.label6.Text = "Department";
+            this.label6.UseCompatibleTextRendering = true;
+            // 
+            // txt_user_department
+            // 
+            this.txt_user_department.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_user_department.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.txt_user_department.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_department.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_department.Location = new System.Drawing.Point(18, 266);
+            this.txt_user_department.Multiline = true;
+            this.txt_user_department.Name = "txt_user_department";
+            this.txt_user_department.Size = new System.Drawing.Size(460, 33);
+            this.txt_user_department.TabIndex = 92;
+            // 
+            // panel6
+            // 
+            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel6.Location = new System.Drawing.Point(16, 300);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(462, 1);
+            this.panel6.TabIndex = 95;
+            // 
+            // label13
+            // 
+            this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label13.Location = new System.Drawing.Point(13, 14);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(120, 24);
+            this.label13.TabIndex = 91;
+            this.label13.Text = "Account Name";
+            this.label13.UseCompatibleTextRendering = true;
+            // 
+            // txt_user_account_name
+            // 
+            this.txt_user_account_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_user_account_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
+            this.txt_user_account_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_account_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_account_name.Location = new System.Drawing.Point(16, 40);
+            this.txt_user_account_name.Multiline = true;
+            this.txt_user_account_name.Name = "txt_user_account_name";
+            this.txt_user_account_name.ReadOnly = true;
+            this.txt_user_account_name.Size = new System.Drawing.Size(462, 29);
+            this.txt_user_account_name.TabIndex = 89;
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(13, 82);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 24);
+            this.label9.TabIndex = 90;
+            this.label9.Text = "Full Name";
+            this.label9.UseCompatibleTextRendering = true;
+            // 
+            // txt_user_full_name
+            // 
+            this.txt_user_full_name.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txt_user_full_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(207)))), ((int)(((byte)(207)))), ((int)(((byte)(208)))));
+            this.txt_user_full_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_user_full_name.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_user_full_name.Location = new System.Drawing.Point(16, 113);
+            this.txt_user_full_name.Multiline = true;
+            this.txt_user_full_name.Name = "txt_user_full_name";
+            this.txt_user_full_name.ReadOnly = true;
+            this.txt_user_full_name.Size = new System.Drawing.Size(462, 29);
+            this.txt_user_full_name.TabIndex = 88;
             // 
             // account_user
             // 
@@ -480,7 +501,8 @@
             this.panel10.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUser)).EndInit();
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -491,31 +513,32 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.OpenFileDialog openFileImage;
         private System.Windows.Forms.Button btn_view_cancel;
-        private System.Windows.Forms.TextBox txt_user_full_name;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox txt_user_account_name;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox txt_user_department;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txt_user_card_id;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox txt_user_contact;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Panel panel10;
         private FontAwesome.Sharp.IconButton btnChooseFile;
         private System.Windows.Forms.PictureBox pictureBoxUser;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.RadioButton button_account_male;
-        private System.Windows.Forms.RadioButton button_account_female;
-        private System.Windows.Forms.TextBox txt_user_email;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnChangePassword;
+        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ComboBox cbo_block;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbo_role;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox txt_user_email;
+        private System.Windows.Forms.RadioButton button_account_female;
+        private System.Windows.Forms.RadioButton button_account_male;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txt_user_contact;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox txt_user_card_id;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_user_department;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txt_user_account_name;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txt_user_full_name;
     }
 }

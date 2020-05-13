@@ -19,7 +19,7 @@ namespace LibraryManagementSystem
     {
         
         string pwd = Class1.GetRandomPassword(20);
-        string password_student = Class1.GetRandomPassword(20);
+        string random_password = Class1.GetRandomPassword(20);
         string get_gender;
         string wanted_path;
         string update_date = "";
@@ -158,7 +158,7 @@ namespace LibraryManagementSystem
                     
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into user_details values('" + txt_user_account_name.Text + "','"+ txt_user_full_name.Text +"','" + img_path.ToString() + "','" + txt_user_card_id.Text + "','" + txt_user_department.Text + "','" + txt_user_contact.Text + "','" + txt_user_email.Text + "','"+ password_student.ToString() +"','"+ get_gender.ToString() +"','"+ DateTime.Now +"','"+update_date+"','"+ cbo_role.SelectedValue + "', '" + cbo_block.SelectedValue + "')";
+                    cmd.CommandText = "insert into user_details values('" + txt_user_account_name.Text + "','"+ txt_user_full_name.Text +"','" + img_path.ToString() + "','" + txt_user_card_id.Text + "','" + txt_user_department.Text + "','" + txt_user_contact.Text + "','" + txt_user_email.Text + "','"+ random_password.ToString() +"','"+ get_gender.ToString() +"','"+ DateTime.Now +"','"+update_date+"','"+ cbo_role.SelectedValue + "', '" + cbo_block.SelectedValue + "')";
                     cmd.ExecuteNonQuery();
 
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
@@ -167,7 +167,7 @@ namespace LibraryManagementSystem
                     //(username, password)
                     smtp.Credentials = new NetworkCredential("mailserviceb1606951@gmail.com", "9nullthis");
                     //(from,to,subject,body)
-                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library, Now you can login my libary system via your email and this password. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is ", password_student.ToString());
+                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library, Now you can login my libary system via your email and this password. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is ", random_password.ToString());
                     mail.Priority = MailPriority.High;
                     smtp.Send(mail);
 

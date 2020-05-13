@@ -83,9 +83,28 @@ namespace LibraryManagementSystem
             con.Open();
             try
             {
-                Bitmap img;
+                Bitmap img1;
                 get_all_role();
                 get_all_status();
+
+                if(login.per_id == 1)
+                {
+                    cbo_block.Enabled = true;
+                    cbo_role.Enabled = true;
+                    txt_user_account_name.ReadOnly = false;
+                    txt_user_card_id.ReadOnly = false;
+                    txt_user_contact.ReadOnly = false;
+                    txt_user_department.ReadOnly = false;
+                    txt_user_email.ReadOnly = false;
+                    txt_user_full_name.ReadOnly = false;
+                    txt_user_full_name.BackColor = System.Drawing.SystemColors.HighlightText;
+                    txt_user_account_name.BackColor = System.Drawing.SystemColors.HighlightText;
+                    txt_user_card_id.BackColor = System.Drawing.SystemColors.HighlightText;
+                    txt_user_contact.BackColor = System.Drawing.SystemColors.HighlightText;
+                    txt_user_department.BackColor = System.Drawing.SystemColors.HighlightText;
+                    txt_user_email.BackColor = System.Drawing.SystemColors.HighlightText;
+
+                }
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
@@ -108,9 +127,10 @@ namespace LibraryManagementSystem
                         button_account_female.Checked = true;
                     }
                     txt_user_account_name.Text = dr["user_account_name"].ToString();
-                    img = new Bitmap(@"..\..\" + dr["user_image"].ToString());
-                    pictureBoxUser.Image = img;
+                    img1 = new Bitmap(@"..\..\" + dr["user_image"].ToString());
+                    pictureBoxUser.Image = img1;
                     pictureBoxUser.SizeMode = PictureBoxSizeMode.StretchImage;
+                    Home.img = img1;
                     txt_user_card_id.Text = dr["user_Id_card"].ToString();
                     txt_user_department.Text = dr["user_department"].ToString();
                     txt_user_full_name.Text = dr["user_full_name"].ToString();
@@ -143,7 +163,6 @@ namespace LibraryManagementSystem
             {
                 if (result == DialogResult.OK)
                 {
-
                     string img_path;
                     File.Copy(openFileImage.FileName, wanted_path + "\\user_images\\" + pwd + ".jpg");
                     img_path = "user_images\\" + pwd + ".jpg";
@@ -159,7 +178,7 @@ namespace LibraryManagementSystem
 
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update user_details set user_contact='"+txt_user_contact.Text+"', user_image='" + img_path.ToString() + "', user_department='" + txt_user_department.Text + "',user_gender='" + set_gender.ToString() + "',user_date_update = '" + DateTime.Now + "', per_Id='" + cbo_role.SelectedValue + "', status_Id='" + cbo_block.SelectedValue + "' where UID=" + login.uid + "";
+                    cmd.CommandText = "update user_details set user_account_name='" + txt_user_account_name.Text + "',user_full_name='" + txt_user_full_name.Text + "',user_image='" + img_path.ToString() + "',user_Id_card='" + txt_user_card_id.Text + "',user_department='" + txt_user_department.Text + "',user_contact='" + txt_user_contact.Text + "',user_email='" + txt_user_email.Text + "',user_gender='" + set_gender.ToString() + "',user_date_update = '" + DateTime.Now + "', per_Id='" + cbo_role.SelectedValue + "', status_Id='" + cbo_block.SelectedValue + "' where UID=" + login.uid + "";
                     cmd.ExecuteNonQuery();
                     load_data();
                     MessageBox.Show("Update successfully");
@@ -177,7 +196,7 @@ namespace LibraryManagementSystem
 
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "update user_details set user_contact='" + txt_user_contact.Text + "', user_department='" + txt_user_department.Text + "',user_gender='" + set_gender.ToString() + "',user_date_update = '" + DateTime.Now + "', per_Id='" + cbo_role.SelectedValue + "', status_Id='" + cbo_block.SelectedValue + "' where UID=" + login.uid + "";
+                    cmd.CommandText = "update user_details set user_account_name='" + txt_user_account_name.Text + "',user_full_name='" + txt_user_full_name.Text + "',user_Id_card='" + txt_user_card_id.Text + "',user_department='" + txt_user_department.Text + "',user_contact='" + txt_user_contact.Text + "',user_email='" + txt_user_email.Text + "',user_gender='" + set_gender.ToString() + "',user_date_update = '" + DateTime.Now + "', per_Id='" + cbo_role.SelectedValue + "', status_Id='" + cbo_block.SelectedValue + "' where UID=" + login.uid + "";
                     cmd.ExecuteNonQuery();
 
                     load_data();
