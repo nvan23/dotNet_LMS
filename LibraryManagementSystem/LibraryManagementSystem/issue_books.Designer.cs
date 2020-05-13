@@ -39,21 +39,13 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.txtStudentEmail_issue = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.dtpBookIssueDate = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtStudentSeminar_issue = new System.Windows.Forms.TextBox();
+            this.txt_issue_account_name = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtStudentContact_issue = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.txtStudentDepartment_issue = new System.Windows.Forms.TextBox();
             this.txtStudentName_issue = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
             this.lable2 = new System.Windows.Forms.Label();
             this.listBoxBooksName = new System.Windows.Forms.ListBox();
             this.panel2.SuspendLayout();
@@ -199,21 +191,13 @@
             // 
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.txtStudentEmail_issue);
-            this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.dtpBookIssueDate);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.textBox1);
             this.panel3.Controls.Add(this.label13);
-            this.panel3.Controls.Add(this.panel7);
-            this.panel3.Controls.Add(this.txtStudentSeminar_issue);
+            this.panel3.Controls.Add(this.txt_issue_account_name);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.txtStudentContact_issue);
-            this.panel3.Controls.Add(this.panel5);
             this.panel3.Controls.Add(this.txtStudentDepartment_issue);
             this.panel3.Controls.Add(this.txtStudentName_issue);
             this.panel3.Controls.Add(this.label10);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.panel6);
             this.panel3.Controls.Add(this.lable2);
             this.panel3.Controls.Add(this.listBoxBooksName);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -227,7 +211,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(12, 292);
+            this.label11.Location = new System.Drawing.Point(12, 296);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(46, 24);
             this.label11.TabIndex = 43;
@@ -240,95 +224,42 @@
             this.txtStudentEmail_issue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentEmail_issue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentEmail_issue.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentEmail_issue.Location = new System.Drawing.Point(17, 318);
+            this.txtStudentEmail_issue.Location = new System.Drawing.Point(17, 322);
             this.txtStudentEmail_issue.Name = "txtStudentEmail_issue";
             this.txtStudentEmail_issue.ReadOnly = true;
             this.txtStudentEmail_issue.Size = new System.Drawing.Size(348, 19);
             this.txtStudentEmail_issue.TabIndex = 42;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Location = new System.Drawing.Point(15, 341);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(350, 1);
-            this.panel8.TabIndex = 44;
-            // 
-            // dtpBookIssueDate
-            // 
-            this.dtpBookIssueDate.CalendarForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.dtpBookIssueDate.CalendarMonthBackground = System.Drawing.SystemColors.HighlightText;
-            this.dtpBookIssueDate.CalendarTitleBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.dtpBookIssueDate.CalendarTitleForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.dtpBookIssueDate.CalendarTrailingForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.dtpBookIssueDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
-            this.dtpBookIssueDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpBookIssueDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookIssueDate.Location = new System.Drawing.Point(407, 193);
-            this.dtpBookIssueDate.Name = "dtpBookIssueDate";
-            this.dtpBookIssueDate.Size = new System.Drawing.Size(329, 26);
-            this.dtpBookIssueDate.TabIndex = 41;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.label1.Location = new System.Drawing.Point(407, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 24);
-            this.label1.TabIndex = 39;
-            this.label1.Text = "IssueDate";
-            this.label1.UseCompatibleTextRendering = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(385, 197);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(351, 20);
-            this.textBox1.TabIndex = 38;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label13.Location = new System.Drawing.Point(12, 145);
+            this.label13.Location = new System.Drawing.Point(12, 15);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 24);
+            this.label13.Size = new System.Drawing.Size(120, 24);
             this.label13.TabIndex = 36;
-            this.label13.Text = "Semester";
+            this.label13.Text = "Account Name";
             this.label13.UseCompatibleTextRendering = true;
             // 
-            // panel7
+            // txt_issue_account_name
             // 
-            this.panel7.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel7.Location = new System.Drawing.Point(15, 194);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(350, 1);
-            this.panel7.TabIndex = 37;
-            // 
-            // txtStudentSeminar_issue
-            // 
-            this.txtStudentSeminar_issue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(214)))), ((int)(((byte)(251)))));
-            this.txtStudentSeminar_issue.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtStudentSeminar_issue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStudentSeminar_issue.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentSeminar_issue.Location = new System.Drawing.Point(17, 171);
-            this.txtStudentSeminar_issue.Name = "txtStudentSeminar_issue";
-            this.txtStudentSeminar_issue.ReadOnly = true;
-            this.txtStudentSeminar_issue.Size = new System.Drawing.Size(348, 19);
-            this.txtStudentSeminar_issue.TabIndex = 33;
+            this.txt_issue_account_name.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(214)))), ((int)(((byte)(251)))));
+            this.txt_issue_account_name.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txt_issue_account_name.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_issue_account_name.ForeColor = System.Drawing.Color.Black;
+            this.txt_issue_account_name.Location = new System.Drawing.Point(17, 41);
+            this.txt_issue_account_name.Name = "txt_issue_account_name";
+            this.txt_issue_account_name.ReadOnly = true;
+            this.txt_issue_account_name.Size = new System.Drawing.Size(348, 19);
+            this.txt_issue_account_name.TabIndex = 33;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(12, 220);
+            this.label9.Location = new System.Drawing.Point(12, 224);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 24);
             this.label9.TabIndex = 34;
@@ -341,19 +272,11 @@
             this.txtStudentContact_issue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentContact_issue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentContact_issue.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentContact_issue.Location = new System.Drawing.Point(17, 246);
+            this.txtStudentContact_issue.Location = new System.Drawing.Point(17, 250);
             this.txtStudentContact_issue.Name = "txtStudentContact_issue";
             this.txtStudentContact_issue.ReadOnly = true;
             this.txtStudentContact_issue.Size = new System.Drawing.Size(348, 19);
             this.txtStudentContact_issue.TabIndex = 29;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Location = new System.Drawing.Point(15, 269);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(350, 1);
-            this.panel5.TabIndex = 35;
             // 
             // txtStudentDepartment_issue
             // 
@@ -361,7 +284,7 @@
             this.txtStudentDepartment_issue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentDepartment_issue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentDepartment_issue.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentDepartment_issue.Location = new System.Drawing.Point(17, 99);
+            this.txtStudentDepartment_issue.Location = new System.Drawing.Point(17, 103);
             this.txtStudentDepartment_issue.Name = "txtStudentDepartment_issue";
             this.txtStudentDepartment_issue.ReadOnly = true;
             this.txtStudentDepartment_issue.Size = new System.Drawing.Size(348, 19);
@@ -373,7 +296,7 @@
             this.txtStudentName_issue.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtStudentName_issue.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtStudentName_issue.ForeColor = System.Drawing.Color.Black;
-            this.txtStudentName_issue.Location = new System.Drawing.Point(15, 38);
+            this.txtStudentName_issue.Location = new System.Drawing.Point(15, 177);
             this.txtStudentName_issue.Name = "txtStudentName_issue";
             this.txtStudentName_issue.ReadOnly = true;
             this.txtStudentName_issue.Size = new System.Drawing.Size(350, 19);
@@ -384,35 +307,19 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(12, 11);
+            this.label10.Location = new System.Drawing.Point(12, 150);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 24);
             this.label10.TabIndex = 28;
             this.label10.Text = "Student Name";
             this.label10.UseCompatibleTextRendering = true;
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel4.Location = new System.Drawing.Point(15, 122);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(350, 1);
-            this.panel4.TabIndex = 32;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel6.Location = new System.Drawing.Point(15, 60);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(350, 1);
-            this.panel6.TabIndex = 30;
-            // 
             // lable2
             // 
             this.lable2.AutoSize = true;
             this.lable2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lable2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lable2.Location = new System.Drawing.Point(12, 73);
+            this.lable2.Location = new System.Drawing.Point(12, 77);
             this.lable2.Name = "lable2";
             this.lable2.Size = new System.Drawing.Size(94, 24);
             this.lable2.TabIndex = 31;
@@ -461,23 +368,15 @@
         private System.Windows.Forms.ListBox listBoxBooksName;
         private FontAwesome.Sharp.IconButton btnIssueBooks;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.TextBox txtStudentSeminar_issue;
+        private System.Windows.Forms.TextBox txt_issue_account_name;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtStudentContact_issue;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtStudentDepartment_issue;
         private System.Windows.Forms.TextBox txtStudentName_issue;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lable2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.DateTimePicker dtpBookIssueDate;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtStudentEmail_issue;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.TextBox txtBooksName_issue;
         private FontAwesome.Sharp.IconButton iconButton1;

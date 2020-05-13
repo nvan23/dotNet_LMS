@@ -16,7 +16,7 @@ namespace LibraryManagementSystem
     {
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True");
         //int BookID = 0;
-
+        /*
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn
         (
@@ -27,12 +27,12 @@ namespace LibraryManagementSystem
             int nWidthEllipse, // height of ellipse
             int nHeightEllipse // width of ellipse
         );
-
+        */
         public add_books()
         {
             InitializeComponent();
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+            //this.FormBorderStyle = FormBorderStyle.None;
+            //Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
 
         public void refesh()
@@ -124,20 +124,7 @@ namespace LibraryManagementSystem
             btnSave.Enabled = true;
         }
 
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-            
-        }
+       
 
         private void panel2_Click(object sender, EventArgs e)
         {

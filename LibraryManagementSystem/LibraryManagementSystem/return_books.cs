@@ -13,6 +13,9 @@ namespace LibraryManagementSystem
 {
     public partial class return_books : Form
     {
+        //create values for book data
+        int book_id;
+
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
 
         public return_books()
@@ -24,16 +27,16 @@ namespace LibraryManagementSystem
         {
             try
             {
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where books_return_date=''";
-                //cmd.CommandText = "select * from issue_books where books_return_date=''";
-                cmd.ExecuteNonQuery();
+                //Fill data for dgvReturn
+                SqlCommand cmd3 = con.CreateCommand();
+                cmd3.CommandType = CommandType.Text;
+                cmd3.CommandText = "SELECT Issue_id AS ID, books_name as Book_Name, books_issue_date AS Issue_Date, books_return_date AS Return_Date, user_id_card as Card_ID, user_full_name as Full_Name, user_email as Email FROM issue_books INNER JOIN user_details ON issue_books.UID = user_details.UID INNER JOIN books_info ON issue_books.books_Id = books_info.books_Id where books_return_date=''";
+                cmd3.ExecuteNonQuery();
 
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-                dgvReturnBooks.DataSource = dt;
+                DataTable dt3 = new DataTable();
+                SqlDataAdapter da3 = new SqlDataAdapter(cmd3);
+                da3.Fill(dt3);
+                dgvReturnBooks.DataSource = dt3;
 
             }
             catch (Exception ex)
@@ -48,7 +51,7 @@ namespace LibraryManagementSystem
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where student_enrollment_no='" + enrollment.ToString() +"' and books_return_date=''";
+                cmd.CommandText = "SELECT Issue_id AS ID, books_name as Book_Name, books_issue_date AS Issue_Date, books_return_date AS Return_Date, user_id_card as Card_ID, user_full_name as Full_Name, user_email as Email FROM issue_books INNER JOIN user_details ON issue_books.UID = user_details.UID INNER JOIN books_info ON issue_books.books_Id = books_info.books_Id where books_return_date='' and user_Id_card='" + enrollment + "'";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -87,7 +90,7 @@ namespace LibraryManagementSystem
                 index = Convert.ToInt32(dgvReturnBooks.SelectedCells[0].Value.ToString());
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Id as ID, student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where Id=" + index+"";
+                cmd.CommandText = "select Issue_id AS ID, books_name as Book_Name, books_issue_date AS Issue_Date, books_return_date AS Return_Date, user_id_card as Card_ID, user_full_name as Full_Name, user_email as Email from issue_books INNER JOIN user_details ON issue_books.UID = user_details.UID INNER JOIN books_info ON issue_books.books_Id = books_info.books_Id where Issue_Id=" + index+"";
                 cmd.ExecuteNonQuery();
                 
 
@@ -102,8 +105,6 @@ namespace LibraryManagementSystem
                     dtpBookReturnDate.MinDate = Convert.ToDateTime(dr["Issue_Date"].ToString());
                 }
 
-                
-
             }
             catch (Exception ex)
             {
@@ -117,16 +118,32 @@ namespace LibraryManagementSystem
             try
             {
                 int index;
+                string books_name;
                 index = Convert.ToInt32(dgvReturnBooks.SelectedCells[0].Value.ToString());
+                books_name = dgvReturnBooks.SelectedCells[1].Value.ToString();
+                //Get student data
+                SqlCommand cmd2 = con.CreateCommand();
+                cmd2.CommandType = CommandType.Text;
+                cmd2.CommandText = "select * from books_info";
+                cmd2.ExecuteNonQuery();
+
+                DataTable dt2 = new DataTable();
+                SqlDataAdapter da2 = new SqlDataAdapter(cmd2);
+                da2.Fill(dt2);
+
+                foreach (DataRow dr2 in dt2.Rows)
+                {
+                    book_id = Convert.ToInt32(dr2["books_Id"].ToString());
+                }
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update issue_books set books_return_date='"+ dtpBookReturnDate.Value.ToString() +"' where Id=" + index + "";
+                cmd.CommandText = "update issue_books set books_return_date='"+ dtpBookReturnDate.Value.ToString() +"' where Issue_Id=" + index + "";
                 cmd.ExecuteNonQuery();
 
                 SqlCommand cmd1 = con.CreateCommand();
                 cmd1.CommandType = CommandType.Text;
-                cmd1.CommandText = "update books_info set available_book=available_book+1 where books_name='" + txtBookName_return.Text + "'";
+                cmd1.CommandText = "update books_info set available_book=available_book+1 where books_name='" + books_name.ToString() + "'";
                 cmd1.ExecuteNonQuery();
 
                 MessageBox.Show("Books Return Successfully");

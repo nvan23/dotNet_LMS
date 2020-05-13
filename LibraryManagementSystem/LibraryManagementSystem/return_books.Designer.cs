@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelReturnBook_update = new System.Windows.Forms.Panel();
             this.btnCancel_update_books = new System.Windows.Forms.Button();
             this.dtpBookReturnDate = new System.Windows.Forms.DateTimePicker();
@@ -95,9 +95,9 @@
             this.dtpBookReturnDate.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.dtpBookReturnDate.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpBookReturnDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpBookReturnDate.Location = new System.Drawing.Point(24, 221);
+            this.dtpBookReturnDate.Location = new System.Drawing.Point(6, 221);
             this.dtpBookReturnDate.Name = "dtpBookReturnDate";
-            this.dtpBookReturnDate.Size = new System.Drawing.Size(227, 26);
+            this.dtpBookReturnDate.Size = new System.Drawing.Size(245, 26);
             this.dtpBookReturnDate.TabIndex = 53;
             // 
             // label1
@@ -105,7 +105,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(18)))), ((int)(((byte)(184)))), ((int)(((byte)(134)))));
-            this.label1.Location = new System.Drawing.Point(21, 194);
+            this.label1.Location = new System.Drawing.Point(6, 194);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(143, 24);
             this.label1.TabIndex = 52;
@@ -117,7 +117,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(21, 128);
+            this.label11.Location = new System.Drawing.Point(6, 128);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(82, 24);
             this.label11.TabIndex = 49;
@@ -130,18 +130,18 @@
             this.txtIssueDate_return.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIssueDate_return.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIssueDate_return.ForeColor = System.Drawing.Color.Black;
-            this.txtIssueDate_return.Location = new System.Drawing.Point(24, 154);
+            this.txtIssueDate_return.Location = new System.Drawing.Point(6, 154);
             this.txtIssueDate_return.Name = "txtIssueDate_return";
             this.txtIssueDate_return.ReadOnly = true;
-            this.txtIssueDate_return.Size = new System.Drawing.Size(227, 19);
+            this.txtIssueDate_return.Size = new System.Drawing.Size(245, 19);
             this.txtIssueDate_return.TabIndex = 48;
             // 
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Location = new System.Drawing.Point(24, 177);
+            this.panel8.Location = new System.Drawing.Point(6, 177);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(227, 1);
+            this.panel8.Size = new System.Drawing.Size(245, 1);
             this.panel8.TabIndex = 50;
             // 
             // label9
@@ -149,7 +149,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(21, 56);
+            this.label9.Location = new System.Drawing.Point(6, 56);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(94, 24);
             this.label9.TabIndex = 46;
@@ -162,18 +162,18 @@
             this.txtBookName_return.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBookName_return.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookName_return.ForeColor = System.Drawing.Color.Black;
-            this.txtBookName_return.Location = new System.Drawing.Point(24, 82);
+            this.txtBookName_return.Location = new System.Drawing.Point(6, 82);
             this.txtBookName_return.Name = "txtBookName_return";
             this.txtBookName_return.ReadOnly = true;
-            this.txtBookName_return.Size = new System.Drawing.Size(227, 19);
+            this.txtBookName_return.Size = new System.Drawing.Size(245, 19);
             this.txtBookName_return.TabIndex = 45;
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Location = new System.Drawing.Point(24, 105);
+            this.panel5.Location = new System.Drawing.Point(6, 105);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(227, 1);
+            this.panel5.Size = new System.Drawing.Size(245, 1);
             this.panel5.TabIndex = 47;
             // 
             // btnReturn
@@ -275,24 +275,24 @@
             this.dgvReturnBooks.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvReturnBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReturnBooks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(123)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(123)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReturnBooks.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReturnBooks.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReturnBooks.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvReturnBooks.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvReturnBooks.Location = new System.Drawing.Point(9, 6);
             this.dgvReturnBooks.Name = "dgvReturnBooks";

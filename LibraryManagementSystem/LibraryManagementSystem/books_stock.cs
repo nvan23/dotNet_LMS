@@ -15,7 +15,6 @@ namespace LibraryManagementSystem
 {
     public partial class books_stock : Form
     {
-        string mail_address = "";
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
 
         public books_stock()
@@ -29,7 +28,7 @@ namespace LibraryManagementSystem
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select Id as ID, books_name as Name,books_author_name as Author,books_quantity as Quantity,available_book as Available from books_info";
+                cmd.CommandText = "select books_Id as ID, books_name as Name,books_author_name as Author,books_quantity as Quantity,available_book as Available from books_info";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -59,17 +58,18 @@ namespace LibraryManagementSystem
             try
             {
                 string index;
-                index = dgvBook_stock.SelectedCells[1].Value.ToString();
+                index = dgvBook_stock.SelectedCells[0].Value.ToString();
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select student_enrollment_no as Student_ID, student_name as Full_Name, student_contact as Phone, student_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books where books_name='" + index.ToString() +"' and books_return_date=''";
+                cmd.CommandText = "select user_Id_card as Card_ID, user_account_name as Account_Name, user_contact as Phone, user_email as Email, books_name as Book_Name, books_issue_date as Issue_Date, books_return_date as Return_Date from issue_books inner join user_details on issue_books.UID = user_details.UID inner join books_info on issue_books.books_Id = books_info.books_Id where issue_books.books_Id='" + index + "' and issue_books.books_return_date=''";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
                 dgvBookReturn_stock.DataSource = dt;
+                txtEmail_stock.Text = "";
 
             }
             catch (Exception ex)
@@ -78,9 +78,21 @@ namespace LibraryManagementSystem
             }
         }
 
-        private void txtSearchBooksStock_TextChanged(object sender, EventArgs e)
+        public void dgvBookReturn_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            try
+            {
+                string get_email;
+                get_email = dgvBookReturn_stock.SelectedCells[3].Value.ToString();
+                txtEmail_stock.Text = get_email.ToString();
+                email = get_email.ToString();
+                send_mail _send_mail = new send_mail();
+                _send_mail.Show();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
 
         private void txtSearchBooksStock_KeyUp(object sender, KeyEventArgs e)
@@ -104,30 +116,9 @@ namespace LibraryManagementSystem
             }
         }
 
-        public string binding_mail()
-        {
-            string result = "";
-            result = mail_address;
-            return result;
-        }
+        public static string email = "";
 
-        public void dgvBookReturn_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                string get_email;
-                get_email = dgvBookReturn_stock.SelectedCells[3].Value.ToString();
-                txtEmail_stock.Text = get_email.ToString();
-                mail_address = get_email.ToString();
-                send_mail _send_mail = new send_mail();
-                _send_mail.Show();
-                binding_mail();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-        }
+        
 
         private void btnSend_stock_Click(object sender, EventArgs e)
         {
@@ -149,10 +140,6 @@ namespace LibraryManagementSystem
                 MessageBox.Show(ex.Message.ToString());
             }
         }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show(binding_mail().ToString());
-        }
+        
     }
 }

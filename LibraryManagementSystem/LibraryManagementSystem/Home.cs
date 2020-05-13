@@ -17,29 +17,15 @@ namespace LibraryManagementSystem
     public partial class Home : Form
     {
         private IconButton currentBtn;
-        private Panel leftBoderBtn;
         public Form currentChildForm;
         public string flag = "";
+        DateTime checkout = DateTime.Now;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
-
-        [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
-        private static extern IntPtr CreateRoundRectRgn
-        (
-            int nLeftRect,     // x-coordinate of upper-left corner
-            int nTopRect,      // y-coordinate of upper-left corner
-            int nRightRect,    // x-coordinate of lower-right corner
-            int nBottomRect,   // y-coordinate of lower-right corner
-            int nWidthEllipse, // height of ellipse
-            int nHeightEllipse // width of ellipse
-        );
-
+        
 
         public Home()
         {
             InitializeComponent();
-            leftBoderBtn = new Panel();
-            leftBoderBtn.Size = new Size(7,74);
-            panelMenu.Controls.Add(leftBoderBtn);
 
             //Move Form Anywhere
             this.Text = string.Empty;
@@ -48,10 +34,84 @@ namespace LibraryManagementSystem
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             HideBtn(btnCreateBook);
             HideBtn(iconBtnView);
+            
+        }
 
-            //Set border radius 
-            this.FormBorderStyle = FormBorderStyle.None;
-            Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
+        public void access()
+        {
+            if (login.per_id == 1)
+            {
+                admin_scope();
+            }
+            else if (login.per_id == 2)
+            {
+                user_scope();
+            }
+            else
+            {
+                guest_scope();
+            }
+        }
+
+        private void Home_Load(object sender, EventArgs e)
+        {
+            if (login.user_account_name != "")
+            {
+                MessageBox.Show("Welcome back " + login.user_account_name);
+                access();
+            }
+            else
+            {
+                guest_scope();
+            }
+        }
+
+        public void admin_scope()
+        {
+            btnDashboard.Visible = true;
+            btnBooks.Visible = true;
+            btnIssueBook.Visible = true;
+            btnReturnBook.Visible = true;
+            btnStock.Visible = true;
+            btnUsers.Visible = true;
+            btn_logout.Visible = true;
+            btnCreateBook.Visible = false;
+            iconBtnView.Visible = false;
+            btnLogin.Visible = false;
+            btnHistory.Visible = true;
+            btnAccount.Visible = true;
+        }
+
+        public void user_scope()
+        {
+            btnDashboard.Visible = false;
+            btnBooks.Visible = true;
+            btnIssueBook.Visible = false;
+            btnReturnBook.Visible = false;
+            btnStock.Visible = false;
+            btnUsers.Visible = false;
+            btn_logout.Visible = true;
+            btnCreateBook.Visible = false;
+            iconBtnView.Visible = false;
+            btnLogin.Visible = false;
+            btnHistory.Visible = true;
+            btnAccount.Visible = true;
+        }
+
+        public void guest_scope()
+        {
+            btnDashboard.Visible = false;
+            btnBooks.Visible = true;
+            btnIssueBook.Visible = false;
+            btnReturnBook.Visible = false;
+            btnStock.Visible = false;
+            btnUsers.Visible = false;
+            btn_logout.Visible = false;
+            btnCreateBook.Visible = false;
+            iconBtnView.Visible = false;
+            btn_logout.Visible = false;
+            btnHistory.Visible = false;
+            btnAccount.Visible = false;
         }
 
         //Set view function button
@@ -73,7 +133,10 @@ namespace LibraryManagementSystem
             public static Color color4 = Color.FromArgb(95, 77, 221);
             public static Color color5 = Color.FromArgb(249, 88, 155);
             public static Color color6 = Color.FromArgb(24, 161, 251);
+            public static Color color7 = Color.FromArgb(251, 175, 44);
+            public static Color color8 = Color.FromArgb(71, 213, 153);
             
+
             //Set function color
             public static Color colorFuncText = System.Drawing.SystemColors.HighlightText;
             public static Color colorFuncBtn = Color.FromArgb(54, 123, 245);
@@ -93,12 +156,7 @@ namespace LibraryManagementSystem
                 currentBtn.IconColor = color;
                 currentBtn.TextImageRelation = TextImageRelation.TextBeforeImage;
                 currentBtn.ImageAlign = ContentAlignment.MiddleRight;
-
-                //Left border button
-                leftBoderBtn.BackColor = color;
-                leftBoderBtn.Location = new Point(0, currentBtn.Location.Y);
-                leftBoderBtn.Visible = true;
-                leftBoderBtn.BringToFront();
+                
 
                 //Icon Current Child Form
                 iconCurrentChildForm.IconChar = currentBtn.IconChar;
@@ -141,7 +199,7 @@ namespace LibraryManagementSystem
         }
 
 
-        private void iconButton1_Click(object sender, EventArgs e)
+        private void btnDashboard_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color1);
             OpenChildForm(new report_books_remain_retain());
@@ -149,25 +207,30 @@ namespace LibraryManagementSystem
             HideBtn(iconBtnView);
         }
 
-        private void iconButton2_Click(object sender, EventArgs e)
+        private void btnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            ShowBtn(btnCreateBook);
-            ShowBtn(iconBtnView);
+            if (login.per_id == 1)
+            {
+                ShowBtn(btnCreateBook);
+                ShowBtn(iconBtnView);
+            }
+            
+            
             OpenChildForm(new view_books());
             flag = "onBooksBtn";
         }
 
-        private void iconButton3_Click(object sender, EventArgs e)
+        private void btnUsers_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color3);
             ShowBtn(btnCreateBook);
             ShowBtn(iconBtnView);
-            OpenChildForm(new view_student_info());
-            flag = "onStudentBtn";
+            OpenChildForm(new view_user());
+            flag = "onUsersBtn";
         }
 
-        private void iconButton4_Click(object sender, EventArgs e)
+        private void btnIssueBook_CLick(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color4);
             OpenChildForm(new issue_books());
@@ -175,7 +238,7 @@ namespace LibraryManagementSystem
             HideBtn(iconBtnView);
         }
 
-        private void iconButton5_Click(object sender, EventArgs e)
+        private void btnReturnBook_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color5);
             OpenChildForm(new return_books());
@@ -183,15 +246,51 @@ namespace LibraryManagementSystem
             HideBtn(iconBtnView);
         }
 
-        private void iconButton6_Click(object sender, EventArgs e)
+        private void btnStock_CLick(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color6);
             OpenChildForm(new books_stock());
             HideBtn(btnCreateBook);
             HideBtn(iconBtnView);
         }
+        private void btnAccount_CLick(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color8);
+            OpenChildForm(new account_user());
+            HideBtn(btnCreateBook);
+            HideBtn(iconBtnView);
+        }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void btnHistory_CLick(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new History());
+        }
+
+        private void btnLogin_CLick(object sender, EventArgs e)
+        {
+            ActivateButton(sender, RGBColors.color7);
+            OpenChildForm(new login());
+            btnLogin.Text = "Login";
+        }
+
+        private void btnLogout_CLick(object sender, EventArgs e)
+        {
+            login.per_id = 0;
+            login.user_account_name = "";
+            login.status_id = 0;
+            login.uid = 0;
+            guest_scope();
+            btnLogin.Visible = true;
+            if (currentChildForm != null)
+            {
+                currentChildForm.Close();
+            }
+            Reset();
+        }
+
+
+        private void avatar_Click(object sender, EventArgs e)
         {
             if (currentChildForm != null)
             {
@@ -202,7 +301,6 @@ namespace LibraryManagementSystem
         private void Reset()
         {
             DisableButton();
-            leftBoderBtn.Visible = false;
             iconCurrentChildForm.IconChar = IconChar.Home;
             iconCurrentChildForm.IconColor = Color.MediumPurple;
             lblCurrentChildForm.Text = "Home";
@@ -246,57 +344,37 @@ namespace LibraryManagementSystem
             else
                 FormBorderStyle = FormBorderStyle.Sizable;
         }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         
-        private void panel5_Click_1(object sender, EventArgs e)
+        private void btnExitApp_Click(object sender, EventArgs e)
         {
             Application.Exit();
             
-        }
-
-        private void panelDesktop_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void btnCreateBook_Click(object sender, EventArgs e)
         {
             if(currentBtn != null)
             {
-                if (flag == "onBooksBtn")
+                if (flag == "onBooksBtn" && login.per_id == 1)
                 {
                     OpenChildForm(new add_books());
                 }
-                if (flag == "onStudentBtn")
+                if (flag == "onUsersBtn" && login.per_id == 1)
                 {
-                    OpenChildForm(new add_student_info());
+                    OpenChildForm(new add_user());
                 }
             }
             
         }
-
-        private void panelTitleBar_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Home_Load(object sender, EventArgs e)
-        {
-
-        }
+               
 
         private void iconBtnView_Click(object sender, EventArgs e)
         {
             if(currentBtn != null)
             {
-                if (currentBtn == btnStudents)
+                if (currentBtn == btnUsers)
                 {
-                    OpenChildForm(new view_student_info());
+                    OpenChildForm(new view_user());
                 }
                 if (currentBtn == btnBooks)
                 {

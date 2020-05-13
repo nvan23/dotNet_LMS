@@ -33,7 +33,6 @@
             this.txtEmail_stock = new System.Windows.Forms.TextBox();
             this.btnSendMail = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -49,7 +48,6 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.iconButton1);
             this.panel1.Controls.Add(this.txtEmail_stock);
             this.panel1.Controls.Add(this.btnSendMail);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -104,30 +102,6 @@
             this.panel2.Size = new System.Drawing.Size(588, 376);
             this.panel2.TabIndex = 6;
             // 
-            // iconButton1
-            // 
-            this.iconButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
-            this.iconButton1.FlatAppearance.BorderSize = 0;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.PaperPlane;
-            this.iconButton1.IconColor = System.Drawing.SystemColors.HighlightText;
-            this.iconButton1.IconSize = 20;
-            this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.iconButton1.Location = new System.Drawing.Point(261, 12);
-            this.iconButton1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(150, 31);
-            this.iconButton1.TabIndex = 32;
-            this.iconButton1.Text = "Send Mail";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.iconButton1.UseVisualStyleBackColor = false;
-            this.iconButton1.Click += new System.EventHandler(this.iconButton1_Click);
-            // 
             // send_mail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -154,6 +128,5 @@
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnSendMail;
         private System.Windows.Forms.TextBox txtEmail_stock;
-        private FontAwesome.Sharp.IconButton iconButton1;
     }
 }

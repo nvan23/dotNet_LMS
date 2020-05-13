@@ -26,24 +26,16 @@ namespace LibraryManagementSystem
             try
             {
                 panelEdit.Visible = false;
+                panel_dgv_view_books.Dock = DockStyle.Fill;
+                panelEdit.Dock = DockStyle.None;
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info";
+                cmd.CommandText = "select books_id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dt);
-                /*
-                DataGridViewButtonColumn button = new DataGridViewButtonColumn();
-                {
-                    button.Name = "button";
-                    button.HeaderText = "Delete";
-                    button.Text = "Delete";
-                    button.UseColumnTextForButtonValue = true; //dont forget this line
-                    this.dgvViewBooks.Columns.Add(button);
-                }
-                */
 
                 dgvViewBooks.DataSource = dt;
                 
@@ -77,7 +69,7 @@ namespace LibraryManagementSystem
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('"+txtSearchBookName.Text+"')";
+                cmd.CommandText = "select books_id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('"+txtSearchBookName.Text+"')";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -104,7 +96,7 @@ namespace LibraryManagementSystem
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('" + txtSearchBookName.Text + "')";
+                cmd.CommandText = "select books_id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info where books_name like('%" + txtSearchBookName.Text + "%') or books_author_name like('" + txtSearchBookName.Text + "')";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -127,12 +119,18 @@ namespace LibraryManagementSystem
 
             try
             {
-                btnDelete.Visible = true;
-                panelEdit.Visible = true;
+                if(login.per_id == 1)
+                {
+                    panelEdit.Visible = true;
+                }
+                else if (login.per_id == 2)
+                {
+                    panelEdit.Visible = false;
+                }
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where id="+index+"";
+                cmd.CommandText = "select * from books_info where books_id="+index+"";
                 cmd.ExecuteNonQuery();
 
                 DataTable dt = new DataTable();
@@ -200,7 +198,7 @@ namespace LibraryManagementSystem
                 index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "update books_info set books_name='" + txtBookName_edit.Text + "',books_author_name='" + txtBookAuthorName_edit.Text + "',books_publication_name='" + txtBookPublication_edit.Text + "',books_purchase_date='" + dtpBookPurchaseDate_edit.Value + "',books_price=" + txtBookPrice_edit.Text + ",books_quantity='" + txtQuantity_edit.Text + "',available_book='" + txtQuantity_edit.Text + "' where id=" + index + "";
+                cmd.CommandText = "update books_info set books_name='" + txtBookName_edit.Text + "',books_author_name='" + txtBookAuthorName_edit.Text + "',books_publication_name='" + txtBookPublication_edit.Text + "',books_purchase_date='" + dtpBookPurchaseDate_edit.Value + "',books_price=" + txtBookPrice_edit.Text + ",books_quantity='" + txtQuantity_edit.Text + "',available_book='" + txtQuantity_edit.Text + "' where books_id=" + index + "";
                 cmd.ExecuteNonQuery();
                 display_books();
                 MessageBox.Show("Update successfully!");
@@ -220,7 +218,7 @@ namespace LibraryManagementSystem
             {
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from books_info where id='" + index + "'";
+                cmd.CommandText = "delete from books_info where books_id='" + index + "'";
                 cmd.ExecuteNonQuery();
 
                 display_books();

@@ -57,11 +57,11 @@
             this.btnCancel_update_books = new System.Windows.Forms.Button();
             this.dgvViewBooks = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel_dgv_view_books = new System.Windows.Forms.Panel();
             this.panelEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).BeginInit();
             this.panel8.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.panel_dgv_view_books.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnSearchStudent
@@ -104,7 +104,7 @@
             this.txtSearchBookName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtSearchBookName.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearchBookName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.txtSearchBookName.Location = new System.Drawing.Point(132, 15);
+            this.txtSearchBookName.Location = new System.Drawing.Point(145, 15);
             this.txtSearchBookName.Margin = new System.Windows.Forms.Padding(3, 0, 3, 0);
             this.txtSearchBookName.Multiline = true;
             this.txtSearchBookName.Name = "txtSearchBookName";
@@ -414,14 +414,14 @@
             this.panel8.Size = new System.Drawing.Size(982, 50);
             this.panel8.TabIndex = 54;
             // 
-            // panel10
+            // panel_dgv_view_books
             // 
-            this.panel10.Controls.Add(this.dgvViewBooks);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel10.Location = new System.Drawing.Point(0, 50);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(982, 631);
-            this.panel10.TabIndex = 55;
+            this.panel_dgv_view_books.Controls.Add(this.dgvViewBooks);
+            this.panel_dgv_view_books.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel_dgv_view_books.Location = new System.Drawing.Point(0, 50);
+            this.panel_dgv_view_books.Name = "panel_dgv_view_books";
+            this.panel_dgv_view_books.Size = new System.Drawing.Size(982, 631);
+            this.panel_dgv_view_books.TabIndex = 55;
             // 
             // view_books
             // 
@@ -429,7 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
             this.ClientSize = new System.Drawing.Size(1282, 681);
-            this.Controls.Add(this.panel10);
+            this.Controls.Add(this.panel_dgv_view_books);
             this.Controls.Add(this.panel8);
             this.Controls.Add(this.panelEdit);
             this.Name = "view_books";
@@ -441,7 +441,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvViewBooks)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            this.panel10.ResumeLayout(false);
+            this.panel_dgv_view_books.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -473,7 +473,7 @@
         private System.Windows.Forms.Panel panelEdit;
         private System.Windows.Forms.DataGridView dgvViewBooks;
         private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Panel panel_dgv_view_books;
         private System.Windows.Forms.Button btnCancel_update_books;
     }
 }

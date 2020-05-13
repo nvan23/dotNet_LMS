@@ -15,10 +15,13 @@ namespace LibraryManagementSystem
 {
     public partial class send_mail : Form
     {
+        private send_email_session _send_email_session;
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
         public send_mail()
         {
             InitializeComponent();
+            _send_email_session = new send_email_session();
+            txtEmail_stock.Text = books_stock.email.ToString();
         }
 
         private void send_mail_Load(object sender, EventArgs e)
@@ -28,8 +31,7 @@ namespace LibraryManagementSystem
                 con.Close();
             }
             con.Open();
-            books_stock _books_stock = new books_stock();
-            txtEmail_stock.Text = _books_stock.binding_mail();
+            
         }
 
         private void btnSendMail_Click(object sender, EventArgs e)
@@ -45,7 +47,11 @@ namespace LibraryManagementSystem
                 MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txtEmail_stock.Text, "Testing Mail Service for book return notice", txtContent_stock.Text);
                 mail.Priority = MailPriority.High;
                 smtp.Send(mail);
+
+               // _send_email_session.reset();
+
                 MessageBox.Show("Send mail successfully!");
+
             }
             catch (Exception ex)
             {
@@ -55,8 +61,12 @@ namespace LibraryManagementSystem
 
         private void iconButton1_Click(object sender, EventArgs e)
         {
-            books_stock _books_stock = new books_stock();
-            MessageBox.Show(_books_stock.binding_mail().ToString());
+        }
+
+        private void iconButton1_Click_1(object sender, EventArgs e)
+        {
+            _send_email_session = new send_email_session();
+            MessageBox.Show(_send_email_session._mail.ToString());
         }
     }
 }
