@@ -165,5 +165,11 @@ namespace LibraryManagementSystem
         {
             load_data();
         }
+
+        private void btnGenerateReport_Click(object sender, EventArgs e)
+        {
+            report_books_remain_retain _report_books_remain_retain = new report_books_remain_retain();
+            _report_books_remain_retain.Show();
+        }
     }
 }

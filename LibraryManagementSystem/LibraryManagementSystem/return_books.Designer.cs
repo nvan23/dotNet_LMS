@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelReturnBook_update = new System.Windows.Forms.Panel();
             this.btnCancel_update_books = new System.Windows.Forms.Button();
             this.dtpBookReturnDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.txtIssueDate_return = new System.Windows.Forms.TextBox();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBookName_return = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btnReturn = new FontAwesome.Sharp.IconButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,6 +45,7 @@
             this.btnSearchBooks_return = new FontAwesome.Sharp.IconButton();
             this.panelReturnBooks = new System.Windows.Forms.Panel();
             this.dgvReturnBooks = new System.Windows.Forms.DataGridView();
+            this.btnGenerateReport = new FontAwesome.Sharp.IconButton();
             this.panelReturnBook_update.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelReturnBooks.SuspendLayout();
@@ -55,15 +54,14 @@
             // 
             // panelReturnBook_update
             // 
+            this.panelReturnBook_update.Controls.Add(this.btnGenerateReport);
             this.panelReturnBook_update.Controls.Add(this.btnCancel_update_books);
             this.panelReturnBook_update.Controls.Add(this.dtpBookReturnDate);
             this.panelReturnBook_update.Controls.Add(this.label1);
             this.panelReturnBook_update.Controls.Add(this.label11);
             this.panelReturnBook_update.Controls.Add(this.txtIssueDate_return);
-            this.panelReturnBook_update.Controls.Add(this.panel8);
             this.panelReturnBook_update.Controls.Add(this.label9);
             this.panelReturnBook_update.Controls.Add(this.txtBookName_return);
-            this.panelReturnBook_update.Controls.Add(this.panel5);
             this.panelReturnBook_update.Controls.Add(this.btnReturn);
             this.panelReturnBook_update.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelReturnBook_update.Location = new System.Drawing.Point(880, 0);
@@ -130,19 +128,12 @@
             this.txtIssueDate_return.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtIssueDate_return.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIssueDate_return.ForeColor = System.Drawing.Color.Black;
-            this.txtIssueDate_return.Location = new System.Drawing.Point(6, 154);
+            this.txtIssueDate_return.Location = new System.Drawing.Point(6, 152);
+            this.txtIssueDate_return.Multiline = true;
             this.txtIssueDate_return.Name = "txtIssueDate_return";
             this.txtIssueDate_return.ReadOnly = true;
-            this.txtIssueDate_return.Size = new System.Drawing.Size(245, 19);
+            this.txtIssueDate_return.Size = new System.Drawing.Size(245, 27);
             this.txtIssueDate_return.TabIndex = 48;
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel8.Location = new System.Drawing.Point(6, 177);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(245, 1);
-            this.panel8.TabIndex = 50;
             // 
             // label9
             // 
@@ -162,19 +153,12 @@
             this.txtBookName_return.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtBookName_return.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBookName_return.ForeColor = System.Drawing.Color.Black;
-            this.txtBookName_return.Location = new System.Drawing.Point(6, 82);
+            this.txtBookName_return.Location = new System.Drawing.Point(6, 80);
+            this.txtBookName_return.Multiline = true;
             this.txtBookName_return.Name = "txtBookName_return";
             this.txtBookName_return.ReadOnly = true;
-            this.txtBookName_return.Size = new System.Drawing.Size(245, 19);
+            this.txtBookName_return.Size = new System.Drawing.Size(245, 27);
             this.txtBookName_return.TabIndex = 45;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel5.Location = new System.Drawing.Point(6, 105);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(245, 1);
-            this.panel5.TabIndex = 47;
             // 
             // btnReturn
             // 
@@ -275,24 +259,24 @@
             this.dgvReturnBooks.BackgroundColor = System.Drawing.SystemColors.HighlightText;
             this.dgvReturnBooks.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvReturnBooks.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(123)))), ((int)(((byte)(245)))));
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(123)))), ((int)(((byte)(245)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvReturnBooks.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvReturnBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvReturnBooks.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvReturnBooks.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvReturnBooks.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvReturnBooks.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvReturnBooks.Location = new System.Drawing.Point(9, 6);
             this.dgvReturnBooks.Name = "dgvReturnBooks";
@@ -301,6 +285,30 @@
             this.dgvReturnBooks.Size = new System.Drawing.Size(865, 580);
             this.dgvReturnBooks.TabIndex = 3;
             this.dgvReturnBooks.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvReturnBooks_CellClick);
+            // 
+            // btnGenerateReport
+            // 
+            this.btnGenerateReport.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(66)))), ((int)(((byte)(133)))), ((int)(((byte)(244)))));
+            this.btnGenerateReport.FlatAppearance.BorderSize = 0;
+            this.btnGenerateReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerateReport.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGenerateReport.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerateReport.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.btnGenerateReport.IconChar = FontAwesome.Sharp.IconChar.FileExport;
+            this.btnGenerateReport.IconColor = System.Drawing.SystemColors.HighlightText;
+            this.btnGenerateReport.IconSize = 20;
+            this.btnGenerateReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGenerateReport.Location = new System.Drawing.Point(7, 281);
+            this.btnGenerateReport.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGenerateReport.Name = "btnGenerateReport";
+            this.btnGenerateReport.Padding = new System.Windows.Forms.Padding(10, 0, 20, 0);
+            this.btnGenerateReport.Rotation = 0D;
+            this.btnGenerateReport.Size = new System.Drawing.Size(245, 31);
+            this.btnGenerateReport.TabIndex = 76;
+            this.btnGenerateReport.Text = "Generate Report";
+            this.btnGenerateReport.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btnGenerateReport.UseVisualStyleBackColor = false;
+            this.btnGenerateReport.Click += new System.EventHandler(this.btnGenerateReport_Click);
             // 
             // return_books
             // 
@@ -336,12 +344,11 @@
         private FontAwesome.Sharp.IconButton btnReturn;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtIssueDate_return;
-        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtBookName_return;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.DateTimePicker dtpBookReturnDate;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancel_update_books;
+        private FontAwesome.Sharp.IconButton btnGenerateReport;
     }
 }

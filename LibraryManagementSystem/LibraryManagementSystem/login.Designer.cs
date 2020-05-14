@@ -31,6 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.iconHome = new FontAwesome.Sharp.IconButton();
+            this.iconExit = new FontAwesome.Sharp.IconButton();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -42,13 +45,10 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.iconHome = new FontAwesome.Sharp.IconButton();
-            this.iconExit = new FontAwesome.Sharp.IconButton();
             this.panel3.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -83,6 +83,58 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(331, 354);
             this.panel3.TabIndex = 15;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.iconHome);
+            this.panel7.Controls.Add(this.iconExit);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(331, 50);
+            this.panel7.TabIndex = 17;
+            this.panel7.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseDown);
+            // 
+            // iconHome
+            // 
+            this.iconHome.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.iconHome.FlatAppearance.BorderSize = 0;
+            this.iconHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconHome.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconHome.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconHome.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.iconHome.IconColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconHome.IconSize = 30;
+            this.iconHome.Location = new System.Drawing.Point(8, 5);
+            this.iconHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.iconHome.Name = "iconHome";
+            this.iconHome.Rotation = 0D;
+            this.iconHome.Size = new System.Drawing.Size(32, 33);
+            this.iconHome.TabIndex = 28;
+            this.iconHome.UseVisualStyleBackColor = false;
+            this.iconHome.Click += new System.EventHandler(this.iconHome_Click);
+            // 
+            // iconExit
+            // 
+            this.iconExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.iconExit.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.iconExit.FlatAppearance.BorderSize = 0;
+            this.iconExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconExit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconExit.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.iconExit.IconColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.iconExit.IconSize = 20;
+            this.iconExit.Location = new System.Drawing.Point(292, 4);
+            this.iconExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.iconExit.Name = "iconExit";
+            this.iconExit.Rotation = 0D;
+            this.iconExit.Size = new System.Drawing.Size(32, 33);
+            this.iconExit.TabIndex = 26;
+            this.iconExit.UseVisualStyleBackColor = false;
+            this.iconExit.Click += new System.EventHandler(this.iconExit_Click);
             // 
             // label5
             // 
@@ -198,6 +250,7 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(331, 354);
             this.panel2.TabIndex = 16;
+            this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
             // 
             // panel5
             // 
@@ -208,57 +261,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(662, 354);
             this.panel5.TabIndex = 17;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.iconHome);
-            this.panel7.Controls.Add(this.iconExit);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(331, 50);
-            this.panel7.TabIndex = 17;
-            // 
-            // iconHome
-            // 
-            this.iconHome.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.iconHome.FlatAppearance.BorderSize = 0;
-            this.iconHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconHome.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconHome.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconHome.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconHome.IconChar = FontAwesome.Sharp.IconChar.Home;
-            this.iconHome.IconColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconHome.IconSize = 30;
-            this.iconHome.Location = new System.Drawing.Point(8, 5);
-            this.iconHome.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconHome.Name = "iconHome";
-            this.iconHome.Rotation = 0D;
-            this.iconHome.Size = new System.Drawing.Size(32, 33);
-            this.iconHome.TabIndex = 28;
-            this.iconHome.UseVisualStyleBackColor = false;
-            this.iconHome.Click += new System.EventHandler(this.iconHome_Click);
-            // 
-            // iconExit
-            // 
-            this.iconExit.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.iconExit.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.iconExit.FlatAppearance.BorderSize = 0;
-            this.iconExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconExit.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconExit.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconExit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconExit.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.iconExit.IconColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.iconExit.IconSize = 20;
-            this.iconExit.Location = new System.Drawing.Point(292, 4);
-            this.iconExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.iconExit.Name = "iconExit";
-            this.iconExit.Rotation = 0D;
-            this.iconExit.Size = new System.Drawing.Size(32, 33);
-            this.iconExit.TabIndex = 26;
-            this.iconExit.UseVisualStyleBackColor = false;
-            this.iconExit.Click += new System.EventHandler(this.iconExit_Click);
             // 
             // login
             // 
@@ -274,10 +276,10 @@
             this.Load += new System.EventHandler(this.login_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel5.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

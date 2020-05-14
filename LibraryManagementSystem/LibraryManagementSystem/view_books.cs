@@ -25,6 +25,12 @@ namespace LibraryManagementSystem
             int index = 0;
             try
             {
+                if (login.per_id != 1)
+                {
+                    panelEdit.Dock = DockStyle.None;
+                    panel_dgv_view_books.Dock = DockStyle.Fill;
+                    dgvViewBooks.Dock = DockStyle.Fill;
+                }
                 panelEdit.Visible = false;
                 panel_dgv_view_books.Dock = DockStyle.Fill;
                 panelEdit.Dock = DockStyle.None;

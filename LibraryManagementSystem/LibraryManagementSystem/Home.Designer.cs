@@ -77,7 +77,7 @@
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(257, 913);
+            this.panelMenu.Size = new System.Drawing.Size(257, 729);
             this.panelMenu.TabIndex = 0;
             // 
             // panel4
@@ -93,7 +93,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 246);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(257, 593);
+            this.panel4.Size = new System.Drawing.Size(257, 409);
             this.panel4.TabIndex = 10;
             // 
             // btnAccount
@@ -339,7 +339,7 @@
             this.btn_logout.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(61)))), ((int)(((byte)(86)))));
             this.btn_logout.IconSize = 32;
             this.btn_logout.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_logout.Location = new System.Drawing.Point(0, 839);
+            this.btn_logout.Location = new System.Drawing.Point(0, 655);
             this.btn_logout.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_logout.Name = "btn_logout";
             this.btn_logout.Padding = new System.Windows.Forms.Padding(12, 0, 23, 0);
@@ -390,7 +390,7 @@
             this.panelTitleBar.Location = new System.Drawing.Point(257, 0);
             this.panelTitleBar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelTitleBar.Name = "panelTitleBar";
-            this.panelTitleBar.Size = new System.Drawing.Size(1105, 70);
+            this.panelTitleBar.Size = new System.Drawing.Size(1093, 70);
             this.panelTitleBar.TabIndex = 1;
             this.panelTitleBar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitleBar_MouseDown);
             // 
@@ -406,7 +406,7 @@
             this.iconMaximize.IconChar = FontAwesome.Sharp.IconChar.WindowMaximize;
             this.iconMaximize.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconMaximize.IconSize = 30;
-            this.iconMaximize.Location = new System.Drawing.Point(1023, 13);
+            this.iconMaximize.Location = new System.Drawing.Point(1001, 13);
             this.iconMaximize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconMaximize.Name = "iconMaximize";
             this.iconMaximize.Rotation = 0D;
@@ -427,7 +427,7 @@
             this.iconMinimize.IconChar = FontAwesome.Sharp.IconChar.WindowMinimize;
             this.iconMinimize.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconMinimize.IconSize = 30;
-            this.iconMinimize.Location = new System.Drawing.Point(985, 13);
+            this.iconMinimize.Location = new System.Drawing.Point(963, 13);
             this.iconMinimize.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconMinimize.Name = "iconMinimize";
             this.iconMinimize.Rotation = 0D;
@@ -448,7 +448,7 @@
             this.iconExit.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.iconExit.IconColor = System.Drawing.SystemColors.ControlDarkDark;
             this.iconExit.IconSize = 30;
-            this.iconExit.Location = new System.Drawing.Point(1061, 13);
+            this.iconExit.Location = new System.Drawing.Point(1039, 13);
             this.iconExit.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.iconExit.Name = "iconExit";
             this.iconExit.Rotation = 0D;
@@ -536,7 +536,7 @@
             this.panelShadow.Location = new System.Drawing.Point(257, 70);
             this.panelShadow.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelShadow.Name = "panelShadow";
-            this.panelShadow.Size = new System.Drawing.Size(1105, 2);
+            this.panelShadow.Size = new System.Drawing.Size(1093, 2);
             this.panelShadow.TabIndex = 2;
             // 
             // panelDesktop
@@ -549,24 +549,24 @@
             this.panelDesktop.Location = new System.Drawing.Point(257, 72);
             this.panelDesktop.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panelDesktop.Name = "panelDesktop";
-            this.panelDesktop.Size = new System.Drawing.Size(1105, 841);
+            this.panelDesktop.Size = new System.Drawing.Size(1093, 657);
             this.panelDesktop.TabIndex = 3;
             this.panelDesktop.TabStop = true;
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1104, 0);
+            this.panel2.Location = new System.Drawing.Point(1092, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1, 840);
+            this.panel2.Size = new System.Drawing.Size(1, 656);
             this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(0, 840);
+            this.panel1.Location = new System.Drawing.Point(0, 656);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1105, 1);
+            this.panel1.Size = new System.Drawing.Size(1093, 1);
             this.panel1.TabIndex = 0;
             // 
             // openFileImageEdit
@@ -579,7 +579,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(257, 72);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(2, 841);
+            this.panel3.Size = new System.Drawing.Size(2, 657);
             this.panel3.TabIndex = 4;
             // 
             // Home
@@ -588,7 +588,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.HighlightText;
-            this.ClientSize = new System.Drawing.Size(1362, 913);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.ControlBox = false;
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelDesktop);

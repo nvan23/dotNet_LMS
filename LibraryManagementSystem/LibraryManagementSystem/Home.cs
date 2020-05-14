@@ -80,7 +80,7 @@ namespace LibraryManagementSystem
 
         public void admin_scope()
         {
-            btnDashboard.Visible = true;
+            btnDashboard.Visible = false;
             btnBooks.Visible = true;
             btnIssueBook.Visible = true;
             btnReturnBook.Visible = true;
@@ -90,7 +90,7 @@ namespace LibraryManagementSystem
             btnCreateBook.Visible = false;
             iconBtnView.Visible = false;
             btnLogin.Visible = false;
-            btnHistory.Visible = true;
+            btnHistory.Visible = false;
             btnAccount.Visible = true;
         }
 

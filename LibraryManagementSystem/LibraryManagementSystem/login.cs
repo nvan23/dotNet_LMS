@@ -38,76 +38,7 @@ namespace LibraryManagementSystem
             this.FormBorderStyle = FormBorderStyle.None;
             Region = System.Drawing.Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 15, 15));
         }
-
-
-        /*
-        private int getID(string username, string pass)
-        {
-            int id = 0;
-            try
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand("SELECT * FROM user_details WHERE user_email ='" + username + "' and user_password='" + pass + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt != null)
-                {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        id = Convert.ToInt32(dr["UID"].ToString());
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Lỗi xảy ra khi truy vấn dữ liệu hoặc kết nối với server thất bại !");
-            }
-            finally
-            {
-                con.Close();
-            }
-            return id;
-        }
-
-        private string get_user_name(string username, string pass)
-        {
-            string user_name = "";
-                SqlCommand cmd = new SqlCommand("SELECT * FROM user_details WHERE user_email ='" + username + "' and user_password='" + pass + "'", con);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da.Fill(dt);
-                if (dt != null)
-                {
-                    foreach (DataRow dr in dt.Rows)
-                    {
-                        user_name = dr["user_account_name"].ToString();
-                    }
-                }
-            return username;
-        }
-
-        private void btn_login_Click(object sender, EventArgs e)
-        {
-            //ID_USER = getID(txtUsername.Text, txtPassword.Text);
-            ACCOUNT_NAME = get_user_name(txtUsername.Text, txtPassword.Text);
-            if (ACCOUNT_NAME != "")
-            {
-                Home _home = new Home();
-                _home.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("Tài khoảng và mật khẩu không đúng !");
-            }
-        }
-
-        public void login_log()
-        {
-
-        }
-        */
+        
         public static int uid = 0;
         public static string user_account_name= "";
         public static int per_id = 0;
@@ -134,8 +65,6 @@ namespace LibraryManagementSystem
 
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
-                //cmd.CommandText = "select * from library_person where username='" + txtUsername.Text + "' and password='" + txtPassword.Text + "'";
-                //cmd.CommandText = "select * from student_info where student_email='" + txtUsername.Text + "' and student_password='" + txtPassword.Text + "'";
                 cmd.CommandText = "select * from user_details inner join status_account on user_details.status_Id = status_account.status_Id inner join permission on permission.per_Id = user_details.per_Id where (user_details.user_email = '" + txtUsername.Text + "' or user_details.user_account_name = '"+ txtUsername.Text +"' or user_details.user_Id_card = '"+ txtUsername.Text +"') and user_details.user_password = '" + txtPassword.Text +"'";
                 cmd.ExecuteNonQuery();
 
@@ -162,6 +91,12 @@ namespace LibraryManagementSystem
                         get_image_location = dr["user_image"].ToString();
                         if (status_id == 1)
                         {
+                            uid = 0;
+                            user_account_name = "";
+                            per_id = 0;
+                            status_id = 0;
+                            get_current_mail = "";
+                            get_image_location = "";
                             MessageBox.Show("Your Account is blocked");
                         }
                         else
@@ -231,6 +166,24 @@ namespace LibraryManagementSystem
             reset_password _reset_password = new reset_password();
             _reset_password.Show();
             this.Close();
+        }
+
+        //Drag Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void panel7_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }    
 }

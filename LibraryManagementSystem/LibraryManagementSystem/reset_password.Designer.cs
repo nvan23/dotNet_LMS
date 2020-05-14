@@ -61,6 +61,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(331, 355);
             this.panel3.TabIndex = 15;
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseDown);
             // 
             // iconHome
             // 
