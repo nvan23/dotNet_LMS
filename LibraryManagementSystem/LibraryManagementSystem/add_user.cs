@@ -167,7 +167,7 @@ namespace LibraryManagementSystem
                     //(username, password)
                     smtp.Credentials = new NetworkCredential("mailserviceb1606951@gmail.com", "9nullthis");
                     //(from,to,subject,body)
-                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library, Now you can login my libary system via your email and this password. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is ", random_password.ToString());
+                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library Team", "Welcome "+ txt_user_full_name.Text + " to Library, Now you can login my libary system via your email. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is  " + random_password.ToString());
                     mail.Priority = MailPriority.High;
                     smtp.Send(mail);
 

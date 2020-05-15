@@ -49,7 +49,7 @@ namespace LibraryManagementSystem
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
-            cmd.CommandText = "select * from user_details";
+            cmd.CommandText = "select * from user_details where UID='"+ login.uid +"'";
             cmd.ExecuteNonQuery();
 
             DataTable dt = new DataTable();

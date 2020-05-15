@@ -354,6 +354,7 @@
             this.panelEdit.Name = "panelEdit";
             this.panelEdit.Size = new System.Drawing.Size(300, 681);
             this.panelEdit.TabIndex = 53;
+            this.panelEdit.Visible = false;
             // 
             // btnCancel_update_books
             // 

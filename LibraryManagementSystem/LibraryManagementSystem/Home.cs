@@ -92,6 +92,8 @@ namespace LibraryManagementSystem
             btnLogin.Visible = false;
             btnHistory.Visible = false;
             btnAccount.Visible = true;
+            ShowBtn(btnCreateBook);
+            ShowBtn(iconBtnView);
         }
 
         public void user_scope()
@@ -222,13 +224,6 @@ namespace LibraryManagementSystem
         private void btnBooks_Click(object sender, EventArgs e)
         {
             ActivateButton(sender, RGBColors.color2);
-            if (login.per_id == 1)
-            {
-                ShowBtn(btnCreateBook);
-                ShowBtn(iconBtnView);
-            }
-            
-            
             OpenChildForm(new view_books());
             flag = "onBooksBtn";
         }

@@ -41,6 +41,7 @@ namespace LibraryManagementSystem
         
         public static int uid = 0;
         public static string user_account_name= "";
+        public static string user_full_name = "";
         public static int per_id = 0;
         public static int status_id = 0;
         public static string get_current_mail = "";
@@ -86,6 +87,7 @@ namespace LibraryManagementSystem
                         status_id = Convert.ToInt32(dr["status_Id"].ToString());
                         per_id = Convert.ToInt32(dr["per_Id"].ToString());
                         user_account_name = dr["user_account_name"].ToString();
+                        user_full_name = dr["user_full_name"].ToString();
                         uid = Convert.ToInt32(dr["uid"].ToString());
                         get_current_mail = dr["user_email"].ToString();
                         get_image_location = dr["user_image"].ToString();

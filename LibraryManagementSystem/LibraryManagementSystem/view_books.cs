@@ -25,15 +25,6 @@ namespace LibraryManagementSystem
             int index = 0;
             try
             {
-                if (login.per_id != 1)
-                {
-                    panelEdit.Dock = DockStyle.None;
-                    panel_dgv_view_books.Dock = DockStyle.Fill;
-                    dgvViewBooks.Dock = DockStyle.Fill;
-                }
-                panelEdit.Visible = false;
-                panel_dgv_view_books.Dock = DockStyle.Fill;
-                panelEdit.Dock = DockStyle.None;
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = "select books_id as ID, books_name as Name, books_author_name as Author, books_publication_name as Publication, books_purchase_date as Purchase_Date, books_price as Price, books_quantity as Quantity, available_book as Available from books_info";
@@ -122,16 +113,12 @@ namespace LibraryManagementSystem
         {
             int index;
             index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
-
+           
             try
             {
                 if(login.per_id == 1)
                 {
                     panelEdit.Visible = true;
-                }
-                else if (login.per_id == 2)
-                {
-                    panelEdit.Visible = false;
                 }
 
                 SqlCommand cmd = con.CreateCommand();
@@ -161,40 +148,7 @@ namespace LibraryManagementSystem
 
         }
 
-        private void auto_update()
-        {
-            int index;
-            index = Convert.ToInt32(dgvViewBooks.SelectedCells[0].Value.ToString());
-            try
-            {
-                btnDelete.Visible = true;
-                panelEdit.Visible = true;
-
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "select * from books_info where id=" + index + "";
-                cmd.ExecuteNonQuery();
-
-                DataTable dt = new DataTable();
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                da.Fill(dt);
-
-                foreach (DataRow dr in dt.Rows)
-                {
-                    txtBookName_edit.Text = dr["books_name"].ToString();
-                    txtBookAuthorName_edit.Text = dr["books_author_name"].ToString();
-                    txtBookPublication_edit.Text = dr["books_publication_name"].ToString();
-                    dtpBookPurchaseDate_edit.Value = Convert.ToDateTime(dr["books_purchase_date"].ToString());
-                    txtBookPrice_edit.Text = dr["books_price"].ToString();
-                    txtQuantity_edit.Text = dr["books_quantity"].ToString();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message.ToString());
-            }
-        }
+     
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
