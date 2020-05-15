@@ -357,6 +357,7 @@
             this.txt_user_contact.Name = "txt_user_contact";
             this.txt_user_contact.Size = new System.Drawing.Size(244, 32);
             this.txt_user_contact.TabIndex = 98;
+            this.txt_user_contact.Leave += new System.EventHandler(this.txt_view_user_phone_Leave);
             // 
             // label10
             // 

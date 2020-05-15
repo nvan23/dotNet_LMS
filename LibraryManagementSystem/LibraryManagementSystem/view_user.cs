@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -268,44 +269,6 @@ namespace LibraryManagementSystem
             
         }
 
-        /*
-        private bool check_Change()
-        {
-            int id;
-            id = Convert.ToInt32(dgv_view_user.SelectedCells[0].Value.ToString());
-
-            panelStudent_edit.Visible = true;
-            SqlCommand cmd_id = con.CreateCommand();
-            cmd_id.CommandType = CommandType.Text;
-            cmd_id.CommandText = "select * from user_details where UID=" + id + "";
-            cmd_id.ExecuteNonQuery();
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd_id);
-            da.Fill(dt);
-
-            foreach (DataRow dr in dt.Rows)
-            {
-                if (txt_view_user_account.Text == dr["user_account_name"].ToString() &&
-                    txt_view_Id_card.Text == dr["user_Id_card"].ToString() &&
-                    txt_view_user_department.Text == dr["user_department"].ToString() &&
-                    txt_view_user_full_name.Text == dr["user_full_name"].ToString() &&
-                    txt_view_user_phone.Text == dr["user_contact"].ToString() &&
-                    txt_view_user_full_name.Text == dr["user_email"].ToString()
-                    )
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-
-            }
-            return true;
-        }
-        */
-
         private void view_btn_update(object sender, EventArgs e)
         {
             try
@@ -339,14 +302,6 @@ namespace LibraryManagementSystem
                 //else if (result == DialogResult.Cancel || result == DialogResult.None)
                 else
                 {
-                    /*
-                    if (check_Change())
-                    {
-                        MessageBox.Show("Nothing to change!");
-                    }
-                    else
-                    {
-                    */
                     int index;
                     index = Convert.ToInt32(dgv_view_user.SelectedCells[0].Value.ToString());
 
@@ -382,12 +337,20 @@ namespace LibraryManagementSystem
             {
                 int index;
                 index = Convert.ToInt32(dgv_view_user.SelectedCells[0].Value.ToString());
-                SqlCommand cmd = con.CreateCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = "delete from user_details where UID='" + index + "'";
-                cmd.ExecuteNonQuery();
-                fill_grid();
-                MessageBox.Show("Delete successfully!");
+                if(login.uid == index)
+                {
+                    MessageBox.Show("You don't delete myseft!");
+                }
+                else
+                {
+                    SqlCommand cmd = con.CreateCommand();
+                    cmd.CommandType = CommandType.Text;
+                    cmd.CommandText = "delete from user_details where UID='" + index + "'";
+                    cmd.ExecuteNonQuery();
+                    fill_grid();
+                    MessageBox.Show("Delete successfully!");
+                } 
+               
 
             }
             catch (Exception ex)
@@ -474,7 +437,29 @@ namespace LibraryManagementSystem
             refesh();
             fill_grid();
         }
-
         
+        private void txt_view_user_phone_Leave(object sender, EventArgs e)
+        {
+            Regex pattern = new Regex(@"[0-9]{4}[0-9]{3}[0-9]{3}");
+            if (!pattern.IsMatch(txt_view_user_phone.Text))
+            {
+                MessageBox.Show("Phone Number Format is invalid, Please retype to continue!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_view_user_phone.Focus();
+            }
+        }
+        private void check_mail_fomart(object sender, EventArgs e)
+        {
+            Regex mRegxExpression;
+            if (txt_view_user_email.Text.Trim() != string.Empty)
+            {
+                mRegxExpression = new Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
+                if (!mRegxExpression.IsMatch(txt_view_user_email.Text.Trim()))
+                {
+                    MessageBox.Show("Email address format is not correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_view_user_email.Focus();
+                }
+            }
+        }
+
     }
 }

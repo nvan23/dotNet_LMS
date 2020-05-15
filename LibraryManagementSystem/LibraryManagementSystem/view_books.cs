@@ -162,6 +162,8 @@ namespace LibraryManagementSystem
                 cmd.ExecuteNonQuery();
                 display_books();
                 MessageBox.Show("Update successfully!");
+                refesh();
+                display_books();
             }
             catch(Exception ex)
             {
@@ -194,6 +196,17 @@ namespace LibraryManagementSystem
         private void btnCancel_update_books_Click(object sender, EventArgs e)
         {
             display_books();
+        }
+
+        private void refesh()
+        {
+            txtBookAuthorName_edit.Clear();
+            txtBookName_edit.Clear();
+            txtBookPrice_edit.Clear();
+            txtBookPublication_edit.Clear();
+            txtQuantity_edit.Clear();
+            txtSearchBookName.Clear();
+            dtpBookPurchaseDate_edit.Value = DateTime.Now;
         }
     }
 }

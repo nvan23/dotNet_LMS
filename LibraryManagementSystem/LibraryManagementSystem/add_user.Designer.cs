@@ -404,6 +404,7 @@
             this.txt_user_contact.Name = "txt_user_contact";
             this.txt_user_contact.Size = new System.Drawing.Size(202, 20);
             this.txt_user_contact.TabIndex = 4;
+            this.txt_user_contact.Leave += new System.EventHandler(this.txt_view_user_phone_Leave);
             // 
             // txt_user_card_id
             // 

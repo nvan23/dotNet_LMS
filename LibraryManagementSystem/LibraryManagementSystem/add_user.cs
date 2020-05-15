@@ -189,12 +189,21 @@ namespace LibraryManagementSystem
                 mRegxExpression = new Regex(@"^([a-zA-Z0-9_\-])([a-zA-Z0-9_\-\.]*)@(\[((25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\.){3}|((([a-zA-Z0-9\-]+)\.)+))([a-zA-Z]{2,}|(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]|[0-9])\])$");
                 if (!mRegxExpression.IsMatch(txt_user_email.Text.Trim()))
                 {
-                    MessageBox.Show("Email address format is not correct.", "MojoCRM", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Email address format is not correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_user_email.Focus();
                 }
             }
         }
-        
+
+        private void txt_view_user_phone_Leave(object sender, EventArgs e)
+        {
+            Regex pattern = new Regex(@"[0-9]{4}[0-9]{3}[0-9]{3}");
+            if (!pattern.IsMatch(txt_user_contact.Text))
+            {
+                MessageBox.Show("Phone Number Format is invalid, Please retype to continue!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_user_contact.Focus();
+            }
+        }
 
         private void refesh()
         {

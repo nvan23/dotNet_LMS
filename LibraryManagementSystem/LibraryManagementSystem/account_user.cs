@@ -7,6 +7,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -218,6 +219,15 @@ namespace LibraryManagementSystem
         {
             change_pasword _change_pasword = new change_pasword();
             _change_pasword.Show();
+        }
+        private void txt_view_user_phone_Leave(object sender, EventArgs e)
+        {
+            Regex pattern = new Regex(@"[0-9]{4}[0-9]{3}[0-9]{3}");
+            if (!pattern.IsMatch(txt_user_contact.Text))
+            {
+                MessageBox.Show("Phone Number Format is invalid, Please retype to continue!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_user_contact.Focus();
+            }
         }
     }
 }
