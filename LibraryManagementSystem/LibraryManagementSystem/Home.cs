@@ -44,9 +44,16 @@ namespace LibraryManagementSystem
 
         public void draw_avatar()
         {
-            img = new Bitmap(@"..\..\" + login.get_image_location);
-            pictureBoxAvatar.Image = img;
-            pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            if(login.get_image_location == "")
+            {
+                return;
+            }
+            else
+            {
+                img = new Bitmap(@"..\..\" + login.get_image_location);
+                pictureBoxAvatar.Image = img;
+                pictureBoxAvatar.SizeMode = PictureBoxSizeMode.StretchImage;
+            }
         }
         
         public void access()

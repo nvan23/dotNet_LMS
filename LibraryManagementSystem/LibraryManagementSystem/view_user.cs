@@ -101,53 +101,59 @@ namespace LibraryManagementSystem
 
         public void fill_grid()
         {
-
-            dgv_view_user.Columns.Clear();
-            dgv_view_user.Refresh();
-            get_all_role();
-            get_all_status();
-
-            if (con.State == ConnectionState.Open)
+            try
             {
-                con.Close();
+                dgv_view_user.Columns.Clear();
+                dgv_view_user.Refresh();
+                get_all_role();
+                get_all_status();
+
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+                con.Open();
+                int flag = 0;
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandType = CommandType.Text;
+                //cmd.CommandText = "select * from user_details";
+                cmd.CommandText = "select UID AS ID, user_email as Email, user_full_name as Full_Name, user_Id_card AS Card_ID from user_details";
+                cmd.ExecuteNonQuery();
+
+                DataTable dt = new DataTable();
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                da.Fill(dt);
+                dgv_view_user.DataSource = dt;
+
+
+                SqlCommand cmd1 = con.CreateCommand();
+                cmd1.CommandType = CommandType.Text;
+                cmd1.CommandText = "select * from user_details";
+                cmd1.ExecuteNonQuery();
+                DataTable dt1 = new DataTable();
+                SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
+                da1.Fill(dt1);
+
+                DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
+                imageCol.HeaderText = "Image";
+                imageCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
+                imageCol.SortMode = DataGridViewColumnSortMode.Automatic;
+                imageCol.Width = 100;
+                dgv_view_user.Columns.Add(imageCol);
+
+                foreach (DataRow dr1 in dt1.Rows)
+                {
+                    Bitmap img = new Bitmap(@"..\..\" + dr1["user_image"].ToString());
+                    dgv_view_user.Rows[flag].Cells[4].Value = img;
+                    dgv_view_user.Rows[flag].Height = 100;
+                    flag = flag + 1;
+                }
+
             }
-            con.Open();
-            int flag = 0;
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandType = CommandType.Text;
-            //cmd.CommandText = "select * from user_details";
-            cmd.CommandText = "select UID AS ID, user_email as Email, user_full_name as Full_Name, user_Id_card AS Card_ID from user_details";
-            cmd.ExecuteNonQuery();
-
-            DataTable dt = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.Fill(dt);
-            dgv_view_user.DataSource = dt;
-            
-
-            SqlCommand cmd1 = con.CreateCommand();
-            cmd1.CommandType = CommandType.Text;
-            cmd1.CommandText = "select * from user_details";
-            cmd1.ExecuteNonQuery();
-            DataTable dt1 = new DataTable();
-            SqlDataAdapter da1 = new SqlDataAdapter(cmd1);
-            da1.Fill(dt1);
-
-            DataGridViewImageColumn imageCol = new DataGridViewImageColumn();
-            imageCol.HeaderText = "Image";
-            imageCol.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            imageCol.SortMode = DataGridViewColumnSortMode.Automatic;
-            imageCol.Width = 100;
-            dgv_view_user.Columns.Add(imageCol);
-
-            foreach (DataRow dr1 in dt1.Rows)
+            catch (Exception ex)
             {
-                Bitmap img = new Bitmap(@"..\..\" + dr1["user_image"].ToString());
-                dgv_view_user.Rows[flag].Cells[4].Value = img;
-                dgv_view_user.Rows[flag].Height = 100;
-                flag = flag + 1;
+                MessageBox.Show(ex.Message.ToString());
             }
-
         }
         
         private void view_user_Load(object sender, EventArgs e)
@@ -242,7 +248,7 @@ namespace LibraryManagementSystem
                     txt_view_Id_card.Text = dr["user_Id_card"].ToString();
                     txt_view_user_department.Text = dr["user_department"].ToString();
                     txt_view_user_full_name.Text = dr["user_full_name"].ToString();
-                    txt_view_user_phone.Text = dr["user_contact"].ToString();
+                    txt_view_user_phone.Text = "0" + dr["user_contact"].ToString();
                     txt_view_user_email.Text = dr["user_email"].ToString();
                     cbo_role.SelectedValue = Convert.ToInt32(dr["per_Id"].ToString());
                     cbo_block.SelectedValue = Convert.ToInt32(dr["status_Id"].ToString());
@@ -297,7 +303,6 @@ namespace LibraryManagementSystem
                     cmd.ExecuteNonQuery();
                     fill_grid();
                     MessageBox.Show("Update successfully");
-                    MessageBox.Show(wanted_path.ToString());
                 }
                 //else if (result == DialogResult.Cancel || result == DialogResult.None)
                 else
@@ -440,7 +445,7 @@ namespace LibraryManagementSystem
         
         private void txt_view_user_phone_Leave(object sender, EventArgs e)
         {
-            Regex pattern = new Regex(@"[0-9]{4}[0-9]{3}[0-9]{3}");
+            Regex pattern = new Regex(@"^([0-9]{10})$");
             if (!pattern.IsMatch(txt_view_user_phone.Text))
             {
                 MessageBox.Show("Phone Number Format is invalid, Please retype to continue!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);

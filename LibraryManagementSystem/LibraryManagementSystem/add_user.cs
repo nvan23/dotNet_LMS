@@ -22,6 +22,7 @@ namespace LibraryManagementSystem
         string random_password = Class1.GetRandomPassword(20);
         string get_gender;
         string wanted_path;
+        DialogResult result;
         string update_date = "";
         SqlConnection con = new SqlConnection(@"Data Source=DESKTOP-E30J54Q\SQLEXPRESS;Initial Catalog=LMS;Integrated Security=True;Pooling=False");
 
@@ -152,27 +153,27 @@ namespace LibraryManagementSystem
                     {
                         get_gender = "Female";
                     }
-
                     File.Copy(openFileImage.FileName, wanted_path + "\\user_images\\" + pwd + ".jpg");
                     img_path = "user_images\\" + pwd + ".jpg";
-                    
+
                     SqlCommand cmd = con.CreateCommand();
                     cmd.CommandType = CommandType.Text;
-                    cmd.CommandText = "insert into user_details values('" + txt_user_account_name.Text + "','"+ txt_user_full_name.Text +"','" + img_path.ToString() + "','" + txt_user_card_id.Text + "','" + txt_user_department.Text + "','" + txt_user_contact.Text + "','" + txt_user_email.Text + "','"+ random_password.ToString() +"','"+ get_gender.ToString() +"','"+ DateTime.Now +"','"+update_date+"','"+ cbo_role.SelectedValue + "', '" + cbo_block.SelectedValue + "')";
+                    cmd.CommandText = "insert into user_details values('" + txt_user_account_name.Text + "','" + txt_user_full_name.Text + "','" + img_path.ToString() + "','" + txt_user_card_id.Text + "','" + txt_user_department.Text + "','" + txt_user_contact.Text + "','" + txt_user_email.Text + "','" + random_password.ToString() + "','" + get_gender.ToString() + "','" + DateTime.Now + "','" + update_date + "','" + cbo_role.SelectedValue + "', '" + cbo_block.SelectedValue + "')";
                     cmd.ExecuteNonQuery();
-
                     SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
                     smtp.EnableSsl = true;
                     smtp.UseDefaultCredentials = false;
                     //(username, password)
                     smtp.Credentials = new NetworkCredential("mailserviceb1606951@gmail.com", "9nullthis");
                     //(from,to,subject,body)
-                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library Team", "Welcome "+ txt_user_full_name.Text + " to Library, Now you can login my libary system via your email. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is  " + random_password.ToString());
+                    MailMessage mail = new MailMessage("mailserviceb1606951@gmail.com", txt_user_email.Text, "Welcome to Library Team", "Welcome " + txt_user_full_name.Text + " to my Library, Now you can login my libary system via your email. To safe your account, please do not share this email for anyone. From Library Team. Your libary account password is  " + random_password.ToString());
                     mail.Priority = MailPriority.High;
                     smtp.Send(mail);
 
                     MessageBox.Show("Adding Student Infomation Successfully! Go to your email to get your password");
                 }
+                
+                
 
             }
             catch (Exception ex)
@@ -197,7 +198,7 @@ namespace LibraryManagementSystem
 
         private void txt_view_user_phone_Leave(object sender, EventArgs e)
         {
-            Regex pattern = new Regex(@"[0-9]{4}[0-9]{3}[0-9]{3}");
+            Regex pattern = new Regex(@"^([0-9]{10})$");
             if (!pattern.IsMatch(txt_user_contact.Text))
             {
                 MessageBox.Show("Phone Number Format is invalid, Please retype to continue!", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Error);

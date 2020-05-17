@@ -236,6 +236,7 @@
             this.txt_view_user_email.Name = "txt_view_user_email";
             this.txt_view_user_email.Size = new System.Drawing.Size(388, 25);
             this.txt_view_user_email.TabIndex = 76;
+            this.txt_view_user_email.Leave += new System.EventHandler(this.check_mail_fomart);
             // 
             // label3
             // 
